@@ -1,0 +1,788 @@
+/*CSS STYLESHEET*/
+/* This CSS Stylesheet is structured by 
+  SURFACE PLANE 
+        TYPEFACES
+        COLORS
+        ROUNDED CORNERS
+        HOVER INTERACTIONS
+        ANIMATIONS
+  SKELETON PLANE
+        FONT SIZES
+        DOCUMENT
+        HTML CLASS SELECTORS
+        VIEWPORT SWITCHES
+        NAVBAR
+        FOOTER
+        TURN COUNT
+        CARD DECK
+        RESTART BUTTON
+        WELL DONE (modal popup)
+        HOW TO PLAY (modal popup)*/
+
+/*-------------------SURFACE PLANE--------------------*/
+
+
+/*---------------SURFACE PLANE - TYPEFACES------------*/
+
+/* @font-face kit by Fonts2u (https://fonts2u.com) */ @font-face {
+  font-family: "HussarBoldWebEdition";
+  src: url("https://lmcrean.github.io/Crocodile-Kingdom/assets/fonts/HussarBoldWeb.eot") format("eot"),
+    url("https://lmcrean.github.io/Crocodile-Kingdom/assets/fonts/HussarBoldWeb.woff") format("woff"),
+    url("https://lmcrean.github.io/Crocodile-Kingdom/assets/fonts/HussarBoldWeb.ttf") format("truetype"),
+    url("https://lmcrean.github.io/Crocodile-Kingdom/assets/fonts/HussarBoldWeb.svg#HussarBoldWeb") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* @font-face kit by Cufonfonts (https://www.cufonfonts.com/font/amazing-grotesk) */
+@font-face {
+  font-family: "AmazingGroteskDemi";
+  src: url("https://lmcrean.github.io/Crocodile-Kingdom/assets/fonts/AmazingGroteskDemi.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*These type selectors are all Peace Sans*/
+h1, h2, label {
+  font-family: 'HussarBoldWebEdition', sans-serif !important; /*the !important rule is used to override the bootstrap font*/
+}
+
+/* These type selectors are all Glacial Indifference*/
+p, h3, h4, h5, h6, a,
+form input, button {
+  font-family: 'AmazingGroteskDemi', sans-serif !important; /*the !important rule is used to override the bootstrap font*/
+}
+
+/* these type selectors are all Glacial Indifference, but with some small changes in style*/
+h3 {font-weight: 700 !important; /*bolden text*/}
+h4 {font-style:italic;/*italicize text*/}
+h5 {font-size: 0.7rem;/*reduce font size*/}
+
+/*---------------SURFACE PLANE - COLORS---------------*/
+/*Root variables are used to define the color palette. The colors are used throughout the stylesheet. It's a useful function because it allows the color palette to be changed easily.*/
+
+:root {
+--brand-color: #00ff3c; /* Brand color */
+--background-color: #ade6bf; /*background color*/
+--complementary: #db41b2; /*complementary color*/
+
+/*Harmonious palette*/
+--harmonious-bold: #0e6b06;
+--harmonious-light: #1c7e33;
+--harmonious-lighter: #349b5d;
+--harmonious-lightest: #e0efdd;
+
+/*Neutral palette*/
+--black-dark: #1e1e1e;
+--black-medium: #313131;
+--black-light: #434343;
+--grey: #808080;
+--lightgrey:#d3d3d3;
+--white: #ffffff;
+}
+
+/*class selectors are used to apply the root colors (above) to the elements*/
+.brand-color {color: var(--brand-color);}
+.background-color {background-color: var(--background-color);}
+.harmonious-bold {color: var(--harmonious-bold);}
+.harmonious-light {color: var(--harmonious-light);}
+.harmonious-lighter {color: var(--harmonious-lighter);}
+.harmonious-lightest {color: var(--harmonious-lightest);}
+.black-dark {color: var(--black-dark);}
+.black-medium {color: var(--black-medium);}
+.black-light {color: var(--black-light);}
+.grey {color: var(--grey);}
+.lightgrey {color: var(--lightgrey);}
+.white {color: var(--white);}
+.complementary {color: var(--complementary);}
+.background-brand-color {background-color: var(--brand-color);}
+.background-color {background-color: var(--background-color);}
+.background-harmonious-bold {background-color: var(--harmonious-bold);}
+.background-harmonious-light {background-color: var(--harmonious-light);}
+.background-harmonious-lighter {background-color: var(--harmonious-lighter);}
+.background-harmonious-lightest {background-color: var(--harmonious-lightest);}
+.background-black-dark {background-color: var(--black-dark);}
+.background-black-medium {background-color: var(--black-medium);}
+.background-black-light {background-color: var(--black-light);}
+.background-grey {background-color: var(--grey);}
+.background-lightgrey {background-color: var(--lightgrey);}
+.background-white {background-color: var(--white);}
+
+/* ---------------SURFACE PLANE - BACKGROUND IMAGE---------------*/
+
+#background-image-jungle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+  filter: contrast(1.1) brightness(1.1) saturate(1.1);
+}
+
+.gameplay-display-grid {
+  z-index: -1;
+}
+
+
+/*---------------SURFACE PLANE - COLORS---------------*/
+
+html, body {
+  background-color: #fff;
+}
+
+.toggle-sfx, .toggle-sound {background-color: var(--harmonious-lighter); color: var(--white);}
+.container-button h6 {color: var(--harmonious-lighter);}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: var(--harmonious-bold) !important;
+  border-style: none !important;
+  color: var(--black-medium);
+}
+
+.footer-links a {
+  background-color: var(--harmonious-lighter);
+  filter:invert(0%);
+}
+
+i.fa-brands {
+color: var(--black-light);
+}
+
+.footer-links img {
+  filter:invert(100%);
+}
+
+/*---------------SURFACE PLANE - SHADOWS, ROUNDED CORNERS---------------*/
+
+/*.shadow is used to create a shadow effect on the card deck with bootstrap*/
+
+.rounded-corner {
+  border-radius: 0.8em;
+}
+
+/*.rounded is used to create rounded corners on the card deck and button*/
+
+/*---------------SURFACE PLANE - HOVER INTERACTIONS---------------*/
+
+button[type="submit"]:hover {
+  background-color: var(--brand-color);
+}
+
+.button a:hover {
+  background-color: var(--harmonious-bold);
+  color: var(--black-medium);
+  cursor: pointer;
+}
+
+.footer-links a:hover {
+  background-color: var(--harmonious-light);
+}
+
+i.fa-brands:hover {
+color: var(--white);
+}
+
+img.footer-links:hover {
+  filter:invert(20%);
+}
+
+/*---------------SURFACE PLANE - ANIMATIONS---------------*/
+.button a, #myBtn, .menu-items a, button[type="submit"], header, a {
+  transition: 0.5s; 
+}
+
+main {
+  transition: margin-top 0.45s ease-in-out;
+  max-width: 100%;
+  margin: auto;
+}
+
+#card-deck {
+  perspective: 1000px; /*this is used to create the 3D effect on the card deck*/
+}
+
+.card-item-container {
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s; 
+}
+
+.card-item-container:active {/*selects front and back of cards when clicked*/
+transform: scale(.90);
+transition: transform .2s;
+}
+
+.card-item-container.flipped-over {
+transform: rotateY(180deg);
+}
+
+.card-front {
+transform: rotateY(180deg);
+}
+
+.shake-effect {
+  animation: shake 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes shake-effect {
+  0%, 100% { transform:rotate(0deg); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(-3deg); }
+  20%, 40%, 60%, 80% { transform: rotate(3deg); }
+}
+
+
+
+/*-------------------SKELETON PLANE--------------------*/
+
+/*--------------- SKELETON PLANE - HTML CLASS SELECTORS---------------*/
+.display-grid {
+  display:grid;
+}
+
+/*-------------------SKELETON PLANE - FONT SIZES-------------------*/
+/* In this section I have used Fixed font sizes, Font sizes with Media Queries and Font sizes with Clamp. The selectors are grouped according to page.*/
+/*TODO: use clamp to replace all font sizes*/
+
+/* The clamp() CSS function clamps a value between an upper and lower bound. It takes three parameters: a minimum value, a preferred value, and a maximum allowed value. The clamp() function is supported in all major browsers, except Internet Explorer, which has now been replaced by Microsoft Edge. It is useful for responsivity because it allows the font size to be responsive to the viewport width.*/
+h1 { font-size: clamp(1.8rem, 1.3893rem + 2.3467vw, 4rem);}
+h2 { font-size: clamp(1.5rem, 1.5rem + 1.2vw, 2.5rem); }
+p { font-size: clamp(1rem, 0.9253rem + 0.4267vw, 1.4rem);}
+
+/*Fixed font sizes for Navbar*/
+
+.navbar .icon, .navbar.menuOpen .icon { font-size: 2.8rem ; }
+.menu-items a { font-size: 1.5em ; }
+
+/*---------------SKELETON PLANE - DOCUMENT---------------*/
+body {
+    overflow-x: hidden; /*responsive design to prevent horizontal scrolling*/
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    margin: auto;
+  }
+
+* {
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  text-align: center;
+}
+
+
+
+section {
+  max-width: 2000px; /*This rule is useful for responsivity because it prevents the section from expanding too much on giant viewports*/
+  margin: auto;
+}
+
+h1,h2,h3,h4 {
+  display: inline;
+  font-weight: 300;
+  text-align: center;
+}
+
+p {
+  padding: 0em 2em;
+  margin: auto;
+}
+
+.button {
+  text-align: center;
+}
+
+.button a, #myBtn {
+  display: inline;
+  justify-content: center;
+  border-style: solid;
+  border-width: 0.2em;
+  border-radius: 12em;
+  padding: 0.5em 1em;
+}
+
+/*footer {width:100vw !important; overflow-x: hidden;}*/ 
+
+/*--------------- SKELETON PLANE - VIEWPORT SWITCHES---------------*/
+/* For responsive design, some elements will disappear at certain viewport breakpoints and "switch" to another element. Note that CSS is mobile-first.*/
+/*breakpoints: mininum | 768px | 1208px | 1728px | max */
+
+@media screen and (max-width: 768px) {.hide-in-mobile { display: none !important;}}
+@media screen and (min-width: 769px) {.hide-in-tablet-laptop-and-desktop{ display: none !important;}}
+  
+@media screen and (max-width: 1208px) {.hide-in-mobile-and-tablet {display: none !important;}}
+@media screen and (min-width: 1209px) {
+.hide-in-laptop-and-desktop {display: none !important;} }
+
+@media screen and (max-width: 1727.99px) {.hide-in-mobile-and-tablet-and-laptop {display: none !important;}}
+@media screen and (min-width: 1728px) {
+.hide-in-desktop {display: none !important;}}
+
+.hide {display: none !important;}
+
+/*---------------SKELETON PLANE - HEADER STRUCTURE---------------*/
+
+header {
+  margin: auto auto;
+}
+
+@media screen and (min-width: 1208px) {
+  header {
+  margin: 0px auto auto 25px;
+  }
+}
+
+/*---------------SKELETON PLANE - RESPONSIVE GRID DISPLAY ---------------*/
+
+.gameplay-display-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "logo"
+    "turns-count"
+    "cards"
+    "restart"
+    "how-to-play"
+    "footer";
+  position: absolute;
+  margin: 10px auto auto;
+}
+
+  #logo-header {grid-area: logo;}
+  #header-buttons {grid-area: logo;}
+  #card-deck {grid-area: cards;}
+  #turns-left-section {grid-area: turns-count;}
+  #restart-section {grid-area: restart;}
+  #how-to-play {grid-area: how-to-play;}
+  #footer-desktop-display {grid-area: footer;}
+
+@media screen and (min-width: 1208px) {
+.gameplay-display-grid {
+  display: grid;
+  grid-template-columns: 33vw 67vw;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "logo cards"
+    "turns-count cards"
+    "restart cards"
+    "how-to-play cards"
+    "footer footer";
+  margin: 3px auto auto 0px;
+  left: 0px;
+}
+
+  #logo-header {grid-area: logo;margin: 0px auto;margin-right: 1rem !important;}
+  #header-buttons {grid-area: logo;}
+  #header-button-container{grid-area: logo; margin: 0px auto;}
+  #card-deck {grid-area: cards;}
+  #turns-left-section {grid-area: turns-count;/* margin-right: 1rem !important; */text-align: right;}
+  #restart-section {grid-area: restart;/* text-align: right; */margin-right: 1rem !important;}
+  #how-to-play {grid-area: how-to-play;margin-right: 1rem !important;}
+}
+
+/*---------------SKELETON PLANE BY FEATURE---------------*/
+/*The selectors are grouped according to feature. Elements of each feature are then grouped with media queries, starting mobile first.*/
+
+/*---------------LOGO---------------
+  Elements = navbartitle, hamburger icon*/
+
+.hide-sprite {display: none !important;}/*hide sprite icon, JS toggles on and off to give illusion of changing crocodile expression*/
+
+
+
+#logo-header {
+  max-width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: auto auto;
+}
+
+.logo-layer {
+  height: auto;
+  max-width: 100%;
+  margin:auto;
+  object-fit: contain;
+}
+
+#logo-text-background {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: auto auto;
+}
+
+#logo-header > .stack-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto auto;
+}
+
+/*--------------- Header button Skeleton ---------------*/
+/*SFX, music, contact*/
+
+/*This code is adapted from this source:*/
+/*https://codepen.io/giannisrig/pen/RYJPzb*/
+
+ #header-buttons {/*ultimate parent element*/
+  position: relative;
+  width: 90vw;
+  height: 36%;
+  max-width: 34em;
+  bottom: 0px;
+  margin: auto auto 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} 
+
+@media screen and (max-width:410px) {
+  #header-buttons {/*ultimate parent element*/
+    margin:auto auto -14px auto;
+  }
+
+  #contact-button {
+    margin: 0px 0px auto auto;
+  }
+}
+
+
+@media screen and (min-width: 1208px) {
+  #header-buttons {/*ultimate parent element*/
+    position: relative;
+    width: 90%;
+    height: 36%;
+    max-width: 31em;
+    bottom: 0px;
+    margin: auto auto 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 1rem;
+  } 
+}
+  
+/*general selector for buttons*/
+.container-button {
+  position: absolute;
+}
+
+#music-button {
+  margin: auto 23% auto auto;
+  position: relative;
+}
+
+#sfx-button {
+  margin: auto auto auto auto;
+}
+
+#contact-button {
+  margin: -2em 0% auto auto;
+  width: 38px;
+  height: 38px;
+  background-color: var(--harmonious-lighter);
+  border-radius: 50%;
+  align-self: center;
+  right: 4px;
+}
+
+
+.toggle-sound, .toggle-sfx { /*connects to animation rules*/
+  position: relative;
+  width: 38px;
+  height: 38px;
+  line-height: 41px;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: pulse 3.25s cubic-bezier(0.66, 0, 0, 1);
+  box-shadow: 0 0 0 0 var(--harmonious-light);
+}
+
+.container-button h6 {
+  text-align: center;
+  margin-top: calc(-14px + 1vw);
+  margin-left: calc(-4px + 1vw);
+  margin: 0px 4px 14px 0px;
+  color:var(--harmonious-lighter);
+}
+
+#contact-button h6 {
+  margin: 7px 0px 0px -6px;
+  bottom: 0px;
+  color:var(--harmonious-lighter);
+  text-align: center;
+}
+
+/*---inside the buttons---*/
+.toggle-sound.sound-mute, .toggle-sfx.sound-mute {
+	box-shadow: none;
+}
+
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+.sound {
+	width: 96%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	margin-left: -15%;
+}
+
+.tooltip--left.sound {
+    margin: 0px 0px 0px -11px;
+}
+
+.sound--icon {
+	color: inherit;
+	line-height: inherit;
+	font-size: 1rem;
+	display: block;
+	margin: 0px 0px 0px 6px;
+	text-align: left;
+	padding: 0px 0px 0px;
+	transform: scale(1.2);
+	transition: all 500ms;
+}
+
+.sound-mute .sound--icon { /*make 20% larger on click*/
+  transform: scale(1);
+  transition: all 500ms;
+}
+
+.sound--wave {
+	position: absolute;
+	border: 2px solid transparent;
+	border-right: 2px solid #fff;
+	border-radius: 80%;
+	transition: all 200ms;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 12px;
+	right: -10px;
+}
+.sound--wave_one {
+  width: 36%;
+  height: 35%;
+}
+.sound--wave_two {
+  width: 59%;
+  height: 56%;
+}
+.sound--wave_three {width: 85%;height:75%;}
+.sound-mute .sound--wave {border-radius: 0;width: 37%;height: 35%;border-width: 0 2px 0 0;left: 5px;}
+.sound-mute .sound--wave_one {
+  transform: rotate(45deg) translate3d(7%, -45%, 0);
+}
+.sound-mute .sound--wave_two {
+  transform: rotate(-45deg) translate3d(0, 50%, 0);
+}
+.sound-mute .sound--wave_three {
+    opacity: 0;
+    transform: translateX(-46%);
+    height: 20%;
+}
+
+#contact-button img {
+  width: 60%;
+  height: auto;
+  margin: 6px auto auto;
+}
+
+/*---------------TURN COUNT SKELETON---------------*/
+
+#turns-left-section {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+  width: 100%;
+  margin-top: 2em;
+}
+
+
+/*---------------TURNS LEFT PROGRESS BAR---------------*/
+
+.progress {
+  width: 50%;
+  height: 1.5em;
+
+  border-radius: 0.5em;
+  margin: auto auto 1em auto;
+  --bs-progress-bg: var(--complementary) !important;
+}
+
+
+.progress-bar {
+  background: linear-gradient(to left, var(--harmonious-bold), var(--harmonious-lighter)) !important;
+  }
+
+@media screen and (min-width: 1208px){
+  .progress {/*align the progress bar to the right of the grid*/
+  margin: auto 0px auto auto;
+  }
+}
+
+/*---------------CARD DECK SKELETON---------------*/
+
+#card-deck {
+  width: 90vw;
+  height: 90vw;
+  max-width: 40em;
+  max-height: 40em;
+  margin: 2em auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+@media screen and (min-width:1208px) {
+  #card-deck {
+    width: 45em;
+    height: 45em;
+    max-width: 45em;
+    max-height: 45em;
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (min-width:1708px) {
+  #card-deck {
+    width: 55em;
+    height: 55em;
+    max-width: 50vw;
+    max-height: 50vw;
+  }
+}
+
+.card-item-container {
+  width: calc(25% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  display: flex;
+}
+
+.card-item { /*this selects both the front and back, puts the cards one over the other*/
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/*---------------RESTART BUTTON SKELETON---------------*/
+
+#restart-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em auto 2em auto;
+}
+
+/*---------------MODAL BUTTONS SKELETON---------------*/
+
+#how-to-play-close-btn {
+  margin: 1rem auto auto;
+}
+
+.win-demo {
+  margin: 0.2rem;
+}
+
+/*---------------FOOTER FEATURE SKELETON---------------
+  ---------------Elements = footer-small-print, footer icons ---------------*/
+
+  footer, #footer-desktop-display {
+    display: flex; /*issue with footer overlapping card deck in desktop, fix later*/
+    margin: auto;
+    bottom: 0;
+    width: 100vw;
+    margin-top: 2em;
+    min-height: 20rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  @media screen and (min-width: 1208px) {
+    footer, #footer-desktop-display {
+    width: 100%;
+    left:0px;
+    position: relative;
+  }
+  }
+  
+  @media screen and (min-width: 1800px) {
+    footer, #footer-desktop-display {
+    width: 100vw;
+  
+    justify-content: center;
+    margin-left:0px;
+  }
+  }
+  
+  .footer-small-print {
+    text-align: center;
+    margin: 4em auto 1em;
+    justify-content: center; 
+  }
+  
+  .footer-row1,
+  .footer-row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-row2 {
+  margin-bottom: 40px;
+  }
+  
+  
+  .footer-links a { /*should be perfectly circular without distortion*/
+    display: flex;
+    border-radius: 1000px;
+    padding: 10px;
+    margin: 8px;
+    width: auto;
+    height: auto;
+  }
+  
+  i.fa-brands {
+  font-size: 0.7em;
+  margin: auto auto auto auto;
+  z-index: 3;
+  }
+  
+  .footer-links img {
+    width: 25px;
+    height: auto;
+  }
+  
+  
+  @media screen and (min-width: 700px) {
+    .footer-links {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  
+    .footer-row1,
+  .footer-row2 {
+    margin-bottom: 40px;}
+  }
