@@ -1,4 +1,6 @@
+// src/components/game/Card.jsx
 import React from 'react';
+import { getAssetPath, getCardPath } from '@/utils/assetPaths';
 
 export default function Card({ type, isFlipped, isMatched, onClick }) {
   return (
@@ -20,7 +22,7 @@ export default function Card({ type, isFlipped, isMatched, onClick }) {
                      [backface-visibility:hidden] bg-white"
         >
           <img
-            src="/src/assets/media/card-deck/back.svg"
+            src={getCardPath('back')}
             alt="Card back"
             className="h-full w-full rounded-xl"
           />
@@ -32,7 +34,7 @@ export default function Card({ type, isFlipped, isMatched, onClick }) {
                      [backface-visibility:hidden] [transform:rotateY(180deg)]"
         >
           <img
-            src={`/src/assets/media/card-deck/${type}.svg`}
+            src={getCardPath(type)}
             alt={`Card ${type}`}
             className="h-full w-full rounded-xl"
           />

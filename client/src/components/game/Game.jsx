@@ -1,9 +1,17 @@
+// src/components/game/Game.jsx
 import React, { useEffect } from 'react';
 import Card from './Card';
 import { useGameLogic } from '../../hooks/useGameLogic';
+import { getAssetPath } from '@/utils/assetPaths';
 
 export default function Game() {
-  const { cards, matchedPairs, handleCardClick, resetGame, initializeGame } = useGameLogic();
+  const { 
+    cards, 
+    matchedPairs, 
+    handleCardClick, 
+    resetGame, 
+    initializeGame 
+  } = useGameLogic();
 
   useEffect(() => {
     initializeGame();
@@ -12,7 +20,7 @@ export default function Game() {
   return (
     <div className="min-h-screen w-full relative">
       <img 
-        src="/src/assets/media/background-imagery/tropical-jungle.svg" 
+        src={getAssetPath('background-imagery/tropical-jungle.svg')}
         alt="Jungle background"
         className="fixed inset-0 w-full h-full object-cover z-0"
       />
