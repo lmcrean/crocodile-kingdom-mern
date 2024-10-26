@@ -14,14 +14,242 @@ index.html
 package.json
 postcss.config.js
 public/
+  assets/
+    audio/
+    backgrounds/
+    cards/
+    crocodile/
+    icons/
+    media/
+      background-imagery/
+        tropical-jungle.svg
+      card-deck/
+        A.svg
+        B.svg
+        back.svg
+        C.svg
+        D.svg
+        E.svg
+        F.svg
+        G.svg
+        H.svg
+      crocodile-sprite/
+        full-blink.png
+        half-blink.png
+        joy-2.png
+        joy-3.png
+        joy.png
+        regular.png
+        shock-2.png
+        shock-3.png
+        shock.png
+        text-background.svg
+        text-foreground.svg
+      documentation/
+        amiresponsive.png
+        card-flip-gameplay.gif
+        card-flip.gif
+        color-line-break.png
+        color-red-line-break.png
+        feature-buttons.png
+        feature-crocodile-reacts.gif
+        feature-header.png
+        feature-sfx-animation.gif
+        features-gameplay.gif
+        features-turns-left.gif
+        issues-icon.svg
+        jshint.png
+        page-structure.png
+        placeholder.gif
+        placeholder.svg
+        progress-bar.gif
+        reactions.gif
+        restart-button.gif
+        root-styles.png
+        style-test.png
+        userimage.svg
+        validator.png
+      documentation-flowchart/
+        flowchart-mvp.svg
+      documentation-lighthouse/
+        features-desktop.png
+        features-mobile.png
+        homepage-desktop.png
+        homepage-mobile.png
+      documentation-screenshots-desktop-view/
+        cards.svg
+        footer.svg
+        howtoplay.svg
+        navbar.svg
+        restart.svg
+        turn-count.svg
+        welldone.svg
+      documentation-wireframe/
+        skeleton-wireframe-howtoplay.png
+        skeleton-wireframe-welldone.png
+        skeleton-wireframe.png
+        skeleton-wireframe.svg
+      icons/
+        contact.svg
+        discord.svg
+        equals-icon.svg
+        facebook.svg
+        github.svg
+        icon-close.svg
+        icon-open.svg
+        instagram.svg
+        linkedin.svg
+        plus-icon.svg
+        slack.svg
+        tiktok.svg
+        youtube.svg
+      issues/
+        ![](assets/
+          media/
+            issues/
+              2023-08-25-16-09-54.png).png
+              2023-08-25-16-10-21.png).png
+              2023-09-09-08-14-58.png).png
+              2023-09-09-18-08-25.png).png
+        1.1.1.gif
+        1.1.2.gif
+        1.1.3a.gif
+        1.1.3b.gif
+        1.1.4a.gif
+        1.1.5.gif
+        1.1.5.mp4
+        1.1.5b.mp4
+        1.2.gif
+        1.2b.gif
+        1.3.1.gif
+        1.3.1b.gif
+        1.3.gif
+        1.4.1.gif
+        1.5.gif
+        2-main-page.gif
+        2.1.3.gif
+        2.1.4.gif
+        2.1.6.gif
+        2.2 footer-test.gif
+        2023-08-12-15-40-14.png
+        2023-08-12-15-40-16.png
+        2023-08-12-17-24-42.png
+        2023-08-12-17-24-48.png
+        2023-08-12-17-24-58.png
+        2023-08-12-17-25-07.png
+        2023-08-12-17-27-46.png
+        2023-08-12-22-23-09.png
+        2023-08-12-22-23-14.png
+        2023-08-12-22-23-28.png
+        2023-08-14-13-52-21.png
+        2023-08-14-16-20-04.png
+        2023-08-15-12-35-40.png
+        2023-08-15-13-14-21.png
+        2023-08-15-13-23-37.png
+        2023-08-16-12-02-16.png
+        2023-08-16-21-11-23.png
+        2023-08-16-21-11-48.png
+        2023-08-24-15-25-21.png
+        2023-08-24-21-34-25.png
+        2023-08-25-16-07-12.png
+        2023-08-25-16-09-54.png
+        2023-08-25-16-10-21.png
+        2023-08-25-16-17-19.png
+        2023-08-25-21-59-31.png
+        2023-08-28-14-04-49.png
+        2023-09-01-12-35-01.png
+        2023-09-01-12-35-13.png
+        2023-09-01-12-36-54.png
+        2023-09-01-12-37-29.png
+        2023-09-01-12-38-49.png
+        2023-09-01-13-02-47.png
+        2023-09-01-13-44-42.png
+        2023-09-01-21-29-38.png
+        2023-09-01-22-46-22.png
+        2023-09-01-22-46-33.png
+        2023-09-07-15-34-24.png
+        2023-09-07-16-44-36.png
+        2023-09-07-16-53-09.png
+        2023-09-07-17-00-33.png
+        2023-09-07-17-00-50.png
+        2023-09-07-19-27-44.png
+        2023-09-09-08-14-58.png
+        2023-09-09-15-31-02.png
+        2023-09-09-18-08-25.png
+        2023-09-09-18-14-55.png
+        2023-09-10-12-31-36.png
+        2023-09-10-12-32-01.png
+        2023-09-10-12-32-31.png
+        2023-09-10-12-33-30.png
+        2023-09-10-12-36-20.png
+        feature-well-done.gif
+        feature-you-lost.gif
+        image.png
+        placeholder.gif
+        Screenshot 2023-08-14 at 09.54.44.png
+        Video08-12-23_222519.gif
+        Video08-12-23_222740.gif
+      logo.svg
+      responsivity-tests/
+        browserstack.mp4
+        cards.gif
+        cards.svg
+        footer.svg
+        how-to-play.gif
+        howtoplay.svg
+        navbar.svg
+        placeholder.gif
+        responsivity-main.gif
+        restart.svg
+        turn-count.svg
+        welldone.svg
+        whole-screen.gif
+        you-lose.gif
+        you-win.gif
+      scroll-secondary.png
+      sound/
+        error-2-36058.mp3
+        flipcard-91468-copy.mp3
+        flipcard-91468.mp3
+        negative_beeps-6008.mp3
+        short-success-sound-glockenspiel-treasure-video-game-6346.mp3
+        simple-piano-melody-9834.mp3
+        solve-the-riddle-140001.mp3
+        success-1-6297.mp3
+        wronganswer-37702.mp3
+      trophy.svg
+      user-happy.svg
+      user-sad.svg
+      you-lose-sad-crocodile.svg
+  tailwind.svg
   vite.svg
 src/
   App.css
   App.jsx
-  assets/
-    react.svg
+  components/
+    game/
+      Card.jsx
+      Crocodile.jsx
+      Game.jsx
+      ScoreBoard.jsx
+    layout/
+      Footer.jsx
+      Header.jsx
+      layout.jsx
+    modals/
+      GameEnd.jsx
+      HighScore.jsx
+      HowToPlay.jsx
+      Modal.jsx
+  context/
+    GameContext.jsx
+  favicon.ico
+  hooks/
+    useGameLogic.jsx
   index.css
   main.jsx
+  utils/
+    assetPaths.js
 tailwind.config.js
 vite.config.js
 ```
@@ -41,19 +269,25 @@ vite.config.js
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.1.5",
+    "classnames": "^2.5.1",
+    "framer-motion": "^11.11.10",
+    "howler": "^2.2.4",
+    "lucide-react": "^0.453.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "repo-to-one-file": "^1.0.2",
     "tailwind": "^4.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8.38.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.3.4",
     "postcss": "^8.4.47",
     "postcss-import": "^16.1.0",
@@ -81,42 +315,741 @@ export default {
 ## src\App.jsx
 
 ```jsx
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import React from 'react';
+import { GameProvider } from './context/GameContext';
+import Layout from './components/layout/Layout';
+import Game from './components/game/Game';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  return (
+    <GameProvider>
+      <Layout>
+        <Game />
+      </Layout>
+    </GameProvider>
+  );
+};
+
+export default App;
+```
+
+## src\components\game\Card.jsx
+
+```jsx
+// src/components/game/Card.jsx
+import React from 'react';
+import { getAssetPath, getCardPath } from '@/utils/assetPaths';
+
+export default function Card({ type, isFlipped, isMatched, onClick }) {
+  return (
+    <div 
+      onClick={onClick}
+      className="h-full w-full [perspective:1000px]"
+    >
+      <div 
+        className={`
+          relative h-full w-full 
+          transition-transform duration-500 
+          transform-gpu [transform-style:preserve-3d]
+          ${isFlipped ? '[transform:rotateY(180deg)]' : ''}
+        `}
+      >
+        {/* Back of card (shows first) */}
+        <div 
+          className="absolute h-full w-full rounded-xl 
+                     [backface-visibility:hidden] bg-white"
+        >
+          <img
+            src={getCardPath('back')}
+            alt="Card back"
+            className="h-full w-full rounded-xl"
+          />
+        </div>
+
+        {/* Front of card (shows when flipped) */}
+        <div 
+          className="absolute h-full w-full rounded-xl 
+                     [backface-visibility:hidden] [transform:rotateY(180deg)]"
+        >
+          <img
+            src={getCardPath(type)}
+            alt={`Card ${type}`}
+            className="h-full w-full rounded-xl"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+## src\components\game\Crocodile.jsx
+
+```jsx
+
+```
+
+## src\components\game\Game.jsx
+
+```jsx
+// src/components/game/Game.jsx
+import React, { useEffect } from 'react';
+import { useGameContext } from '../../context/GameContext';
+import { useGameLogic } from '../../hooks/useGameLogic';
+import Card from './Card';
+
+export default function Game() {
+  const { 
+    cards, 
+    matchedPairs, 
+    turnsLeft 
+  } = useGameContext();
+
+  const {
+    handleCardClick,
+    resetGame,
+    initializeGame
+  } = useGameLogic();
+
+  useEffect(() => {
+    initializeGame();
+  }, [initializeGame]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div className="w-full mx-auto">
+      {/* Game Status */}
+      <div className="text-center mb-6 lg:text-left">
+        <p className="text-white text-lg font-bold mb-2">
+          Matches Found: {matchedPairs.length} / 8
+        </p>
+        <p className="text-white text-lg font-bold">
+          Turns Left: {turnsLeft}
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {/* Game Controls */}
+      <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
+        <button
+          onClick={resetGame}
+          className="px-6 py-2 bg-green-700 text-white rounded-full 
+                   hover:bg-green-800 transition-colors shadow-lg
+                   w-full sm:w-auto"
+        >
+          Restart Game
+        </button>
+        <button
+          className="px-6 py-2 bg-green-700 text-white rounded-full 
+                   hover:bg-green-800 transition-colors shadow-lg
+                   w-full sm:w-auto"
+        >
+          How to Play
+        </button>
+      </div>
+
+      {/* Card Grid - Responsive sizing */}
+      <div className="grid grid-cols-4 gap-2 sm:gap-4 
+                    aspect-square w-full 
+                    xs:max-w-[90vw] sm:max-w-[85vw] md:max-w-[80vw] 
+                    lg:max-w-none mx-auto">
+        {cards.map(card => (
+          <Card 
+            key={card.id}
+            {...card}
+            onClick={() => handleCardClick(card.id)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+
+## src\components\game\ScoreBoard.jsx
+
+```jsx
+import React from 'react';
+import { useGameContext } from '@/context/GameContext';
+
+export default function ScoreBoard() {
+  const { turns, turnsLeft, maxTurns } = useGameContext();
+  const progressPercentage = (turnsLeft / maxTurns) * 100;
+
+  return (
+    <section className="w-full max-w-md mx-auto p-4">
+      <div className="text-center mb-4">
+        <h2 className="text-2xl font-bold text-green-800">
+          Turns left: {turnsLeft}
+        </h2>
+      </div>
+
+      {/* Progress Bar */}
+      <div className="relative w-full h-4 bg-pink-400 rounded-full overflow-hidden shadow-lg">
+        <div 
+          className="absolute top-0 left-0 h-full bg-gradient-to-r from-green-800 to-green-600 transition-all duration-300"
+          style={{ width: `${progressPercentage}%` }}
+          role="progressbar"
+          aria-valuenow={turnsLeft}
+          aria-valuemin={0}
+          aria-valuemax={maxTurns}
+        />
+      </div>
+
+      {/* Hidden Turns Counter (used for final score) */}
+      <div className="sr-only">
+        Total turns taken: {turns}
+      </div>
+    </section>
+  );
+}
+```
+
+## src\components\layout\Footer.jsx
+
+```jsx
+// src/components/layout/Footer.jsx
+import React from 'react';
+
+const socialLinks = [
+  { name: 'Facebook', href: 'https://www.facebook.com/', icon: '/assets/media/icons/facebook.svg' },
+  { name: 'Instagram', href: 'https://www.instagram.com/', icon: '/assets/media/icons/instagram.svg' },
+  { name: 'GitHub', href: 'https://www.github.com/', icon: '/assets/media/icons/github.svg' },
+  { name: 'TikTok', href: 'https://www.tiktok.com/', icon: '/assets/media/icons/tiktok.svg' },
+  { name: 'YouTube', href: 'https://www.youtube.com/', icon: '/assets/media/icons/youtube.svg' },
+  { name: 'Discord', href: 'https://www.discord.com/', icon: '/assets/media/icons/discord.svg' },
+  { name: 'Slack', href: 'https://www.slack.com/', icon: '/assets/media/icons/slack.svg' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/', icon: '/assets/media/icons/linkedin.svg' },
+];
+
+export default function Footer() {
+  return (
+    <footer className="w-full py-8 mt-auto bg-green-50/80 backdrop-blur-sm">
+      <div className="container mx-auto px-4">
+        {/* Copyright */}
+        <div className="text-center mb-8">
+          <p className="text-sm sm:text-base text-green-800">© 2023 Crocodile Kingdom</p>
+        </div>
+
+        {/* Social Links - Responsive grid */}
+        <div className="grid grid-cols-4 gap-3 xs:gap-4 
+                      max-w-xs mx-auto sm:flex sm:max-w-2xl 
+                      sm:justify-center sm:gap-6">
+          {socialLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 xs:w-10 xs:h-10 rounded-full 
+                       bg-green-600 flex items-center justify-center 
+                       hover:bg-green-700 transition-colors group"
+              aria-label={link.name}
+            >
+              <img 
+                src={link.icon} 
+                alt=""
+                className="w-4 h-4 xs:w-5 xs:h-5 invert 
+                         group-hover:scale-110 transition-transform"
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+}
+```
+
+## src\components\layout\Header.jsx
+
+```jsx
+// src/components/layout/Header.jsx
+import React from 'react';
+import { VolumeX, Volume2, Mail } from 'lucide-react';
+import { useGameContext } from '../../context/GameContext';
+
+export default function Header() {
+  const { soundEnabled, musicEnabled, dispatch } = useGameContext();
+
+  return (
+    <header className="w-full">
+      {/* Logo Container - Responsive sizing */}
+      <div className="relative h-32 sm:h-40 lg:h-48 mb-6 lg:mb-8">
+        {/* Logo Background */}
+        <img 
+          src="/assets/media/crocodile-sprite/text-background.svg"
+          alt=""
+          className="w-full h-full object-contain"
+        />
+        
+        {/* Crocodile Mascot */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img 
+            src="/assets/media/crocodile-sprite/regular.png"
+            alt=""
+            className="h-24 sm:h-32 lg:h-40 object-contain z-10"
+          />
+        </div>
+        
+        {/* Logo Text */}
+        <img 
+          src="/assets/media/crocodile-sprite/text-foreground.svg"
+          alt="Crocodile Kingdom"
+          className="absolute inset-0 w-full h-full object-contain z-20"
+        />
+      </div>
+
+      {/* Controls - Responsive grid */}
+      <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-xs mx-auto lg:max-w-sm">
+        {/* Sound Effects */}
+        <div className="flex flex-col items-center">
+          <button
+            onClick={() => dispatch({ type: 'TOGGLE_SOUND' })}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-600 
+                     flex items-center justify-center text-white 
+                     hover:bg-green-700 transition-colors p-0"
+          >
+            {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+          </button>
+          <span className="mt-2 text-xs sm:text-sm text-green-800 font-medium">SFX</span>
+        </div>
+
+        {/* Music */}
+        <div className="flex flex-col items-center">
+          <button
+            onClick={() => dispatch({ type: 'TOGGLE_MUSIC' })}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-600 
+                     flex items-center justify-center text-white 
+                     hover:bg-green-700 transition-colors p-0"
+          >
+            {musicEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
+          </button>
+          <span className="mt-2 text-xs sm:text-sm text-green-800 font-medium">Music</span>
+        </div>
+
+        {/* Contact */}
+        <div className="flex flex-col items-center">
+          <a
+            href="mailto:contact@crocodilekingdom.co.uk"
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-600 
+                     flex items-center justify-center text-white 
+                     hover:bg-green-700 transition-colors"
+          >
+            <Mail size={20} />
+          </a>
+          <span className="mt-2 text-xs sm:text-sm text-green-800 font-medium">Contact</span>
+        </div>
+      </div>
+    </header>
+  );
+}
+```
+
+## src\components\layout\layout.jsx
+
+```jsx
+// src/components/layout/Layout.jsx
+import React from 'react';
+import { useGameContext } from '../../context/GameContext';
+import Header from './Header';
+import Footer from './Footer';
+
+export default function Layout({ children }) {
+    return (
+      <div className="min-h-screen flex flex-col bg-green-50">
+        {/* Fixed Background */}
+        <div className="fixed inset-0 z-0">
+          <img 
+            src="/assets/media/background-imagery/tropical-jungle.svg"
+            alt="Jungle background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Content Container - Responsive grid structure */}
+        <div className="relative z-10 flex flex-col min-h-screen w-[100vw]">
+          <div className="container mx-auto px-4 flex flex-col
+            xs:max-w-[100vw] sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl
+            lg:grid lg:grid-cols-[1fr_2fr] lg:gap-8 xl:gap-12">
+            
+            {/* Left Column (Header + Controls) */}
+            <div className="lg:sticky lg:top-0 lg:h-screen lg:pt-8">
+              <Header />
+            </div>
+  
+            {/* Right Column (Game Area) */}
+            <main className="flex-1 py-8">
+              {children}
+            </main>
+          </div>
+  
+          <Footer />
+        </div>
+      </div>
+    );
+  }
+  
+```
+
+## src\components\modals\GameEnd.jsx
+
+```jsx
+
+```
+
+## src\components\modals\HighScore.jsx
+
+```jsx
+
+```
+
+## src\components\modals\HowToPlay.jsx
+
+```jsx
+
+```
+
+## src\components\modals\Modal.jsx
+
+```jsx
+
+```
+
+## src\context\GameContext.jsx
+
+```jsx
+// src/context/GameContext.jsx
+import React, { createContext, useContext, useReducer } from 'react';
+
+// Define initial state with all game properties
+const initialState = {
+  // Card related state
+  cards: [],
+  flippedCards: [],
+  matchedPairs: [],
+  isChecking: false,
+
+  // Game progress
+  turns: 0,
+  turnsLeft: 40,
+  maxTurns: 40,
+  gameStarted: false,
+  gameOver: false,
+  gameWon: false,
+
+  // Audio state
+  soundEnabled: true,
+  musicEnabled: true,
+
+  // High scores
+  highScores: [],
+  currentScore: 0,
+};
+
+// Define all possible action types
+const ActionTypes = {
+  // Card actions
+  INITIALIZE_CARDS: 'INITIALIZE_CARDS',
+  FLIP_CARD: 'FLIP_CARD',
+  RESET_FLIPPED_CARDS: 'RESET_FLIPPED_CARDS',
+  SET_MATCHED_PAIR: 'SET_MATCHED_PAIR',
+  SET_CHECKING: 'SET_CHECKING',
+
+  // Game progress actions
+  START_GAME: 'START_GAME',
+  END_GAME: 'END_GAME',
+  RESET_GAME: 'RESET_GAME',
+  INCREMENT_TURNS: 'INCREMENT_TURNS',
+  DECREASE_TURNS_LEFT: 'DECREASE_TURNS_LEFT',
+
+  // Audio actions
+  TOGGLE_SOUND: 'TOGGLE_SOUND',
+  TOGGLE_MUSIC: 'TOGGLE_MUSIC',
+
+  // Score actions
+  UPDATE_SCORE: 'UPDATE_SCORE',
+  ADD_HIGH_SCORE: 'ADD_HIGH_SCORE',
+};
+
+// Game reducer with all possible state updates
+function gameReducer(state, action) {
+  switch (action.type) {
+    case ActionTypes.INITIALIZE_CARDS:
+      return {
+        ...state,
+        cards: action.payload,
+        flippedCards: [],
+        matchedPairs: [],
+        turns: 0,
+        turnsLeft: state.maxTurns,
+        gameOver: false,
+        gameWon: false,
+        gameStarted: true,
+        currentScore: 0,
+      };
+
+    case ActionTypes.FLIP_CARD:
+      return {
+        ...state,
+        cards: state.cards.map(card =>
+          card.id === action.payload
+            ? { ...card, isFlipped: true }
+            : card
+        ),
+        flippedCards: [...state.flippedCards, action.payload]
+      };
+
+    case ActionTypes.RESET_FLIPPED_CARDS:
+      return {
+        ...state,
+        cards: state.cards.map(card =>
+          state.flippedCards.includes(card.id)
+            ? { ...card, isFlipped: false }
+            : card
+        ),
+        flippedCards: []
+      };
+
+    case ActionTypes.SET_MATCHED_PAIR:
+      const newMatchedPairs = [...state.matchedPairs, action.payload];
+      const isGameWon = newMatchedPairs.length === 8; // All pairs found
+      return {
+        ...state,
+        matchedPairs: newMatchedPairs,
+        gameWon: isGameWon,
+        gameOver: isGameWon,
+        currentScore: state.turnsLeft * 100, // Calculate score based on turns left
+        cards: state.cards.map(card =>
+          card.type === action.payload
+            ? { ...card, isMatched: true }
+            : card
+        ),
+        flippedCards: []
+      };
+
+    case ActionTypes.SET_CHECKING:
+      return {
+        ...state,
+        isChecking: action.payload
+      };
+
+    case ActionTypes.START_GAME:
+      return {
+        ...state,
+        gameStarted: true,
+        gameOver: false,
+        gameWon: false
+      };
+
+    case ActionTypes.END_GAME:
+      return {
+        ...state,
+        gameOver: true,
+        gameWon: action.payload
+      };
+
+    case ActionTypes.INCREMENT_TURNS:
+      return {
+        ...state,
+        turns: state.turns + 1,
+        turnsLeft: state.turnsLeft - 1,
+        gameOver: state.turnsLeft <= 1 && !state.gameWon
+      };
+
+    case ActionTypes.TOGGLE_SOUND:
+      return {
+        ...state,
+        soundEnabled: !state.soundEnabled
+      };
+
+    case ActionTypes.TOGGLE_MUSIC:
+      return {
+        ...state,
+        musicEnabled: !state.musicEnabled
+      };
+
+    case ActionTypes.UPDATE_SCORE:
+      return {
+        ...state,
+        currentScore: action.payload
+      };
+
+    case ActionTypes.ADD_HIGH_SCORE:
+      const newHighScores = [
+        ...state.highScores,
+        { name: action.payload.name, score: action.payload.score }
+      ].sort((a, b) => b.score - a.score).slice(0, 10); // Keep top 10 scores
+
+      return {
+        ...state,
+        highScores: newHighScores
+      };
+
+    case ActionTypes.RESET_GAME:
+      return {
+        ...initialState,
+        cards: action.payload,
+        soundEnabled: state.soundEnabled,
+        musicEnabled: state.musicEnabled,
+        highScores: state.highScores
+      };
+
+    default:
+      return state;
+  }
 }
 
-export default App
+// Create the context
+const GameContext = createContext(undefined);
 
+// Provider component
+export function GameProvider({ children }) {
+  const [state, dispatch] = useReducer(gameReducer, initialState);
+
+  // Create value object with all state and dispatch
+  const value = {
+    // Game state
+    cards: state.cards,
+    flippedCards: state.flippedCards,
+    matchedPairs: state.matchedPairs,
+    isChecking: state.isChecking,
+    
+    // Game progress
+    turns: state.turns,
+    turnsLeft: state.turnsLeft,
+    maxTurns: state.maxTurns,
+    gameStarted: state.gameStarted,
+    gameOver: state.gameOver,
+    gameWon: state.gameWon,
+    
+    // Audio state
+    soundEnabled: state.soundEnabled,
+    musicEnabled: state.musicEnabled,
+    
+    // Scores
+    currentScore: state.currentScore,
+    highScores: state.highScores,
+
+    // Actions dispatcher
+    dispatch,
+
+    // Helper methods
+    toggleSound: () => dispatch({ type: ActionTypes.TOGGLE_SOUND }),
+    toggleMusic: () => dispatch({ type: ActionTypes.TOGGLE_MUSIC }),
+    resetGame: (cards) => dispatch({ type: ActionTypes.RESET_GAME, payload: cards }),
+    addHighScore: (name, score) => dispatch({ 
+      type: ActionTypes.ADD_HIGH_SCORE, 
+      payload: { name, score } 
+    }),
+  };
+
+  return (
+    <GameContext.Provider value={value}>
+      {children}
+    </GameContext.Provider>
+  );
+}
+
+// Custom hook to use the game context
+export function useGameContext() {
+  const context = useContext(GameContext);
+  if (context === undefined) {
+    throw new Error('useGameContext must be used within a GameProvider');
+  }
+  return context;
+}
+
+// Export context, provider, and hook
+export default GameContext;
+
+// Export action types for use in components
+export { ActionTypes };
+```
+
+## src\hooks\useGameLogic.jsx
+
+```jsx
+// src/hooks/useGameLogic.jsx
+import { useCallback } from 'react';
+import { useGameContext } from '../context/GameContext';
+
+export const useGameLogic = () => {
+  const { 
+    cards, 
+    flippedCards, 
+    matchedPairs, 
+    isChecking,
+    dispatch 
+  } = useGameContext();
+
+  const shuffleCards = useCallback(() => {
+    const cardTypes = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    const cardPairs = cardTypes.flatMap(type => [
+      { id: `${type}-1`, type, isFlipped: false, isMatched: false },
+      { id: `${type}-2`, type, isFlipped: false, isMatched: false }
+    ]);
+
+    // Fisher-Yates shuffle
+    for (let i = cardPairs.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cardPairs[i], cardPairs[j]] = [cardPairs[j], cardPairs[i]];
+    }
+
+    return cardPairs;
+  }, []);
+
+  const initializeGame = useCallback(() => {
+    const shuffledCards = shuffleCards();
+    dispatch({ type: 'INITIALIZE_CARDS', payload: shuffledCards });
+  }, [dispatch, shuffleCards]);
+
+  const handleCardClick = useCallback((cardId) => {
+    const cardToFlip = cards.find(card => card.id === cardId);
+    
+    // Prevent invalid moves
+    if (
+      isChecking || 
+      cardToFlip.isMatched || 
+      cardToFlip.isFlipped || 
+      flippedCards.length === 2
+    ) {
+      return;
+    }
+
+    // Flip the card
+    dispatch({ type: 'FLIP_CARD', payload: cardId });
+
+    // If this is the second card
+    if (flippedCards.length === 1) {
+      const firstCard = cards.find(card => card.id === flippedCards[0]);
+      
+      // Check for match
+      if (firstCard.type === cardToFlip.type) {
+        dispatch({ type: 'SET_MATCHED_PAIR', payload: cardToFlip.type });
+      } else {
+        // No match - flip cards back after delay
+        setTimeout(() => {
+          dispatch({ type: 'RESET_FLIPPED_CARDS' });
+        }, 1000);
+      }
+      
+      dispatch({ type: 'INCREMENT_TURNS' });
+    }
+  }, [cards, flippedCards, isChecking, dispatch]);
+
+  const resetGame = useCallback(() => {
+    const shuffledCards = shuffleCards();
+    dispatch({ type: 'RESET_GAME', payload: shuffledCards });
+  }, [dispatch, shuffleCards]);
+
+  return {
+    cards,
+    matchedPairs,
+    handleCardClick,
+    resetGame,
+    initializeGame
+  };
+};
 ```
 
 ## src\main.jsx
@@ -135,6 +1068,21 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 ```
 
+## src\utils\assetPaths.js
+
+```js
+// src/utils/assetPaths.js
+export const getAssetPath = (path) => `/assets/media/${path}`;
+
+export const getCardPath = (id) => `/assets/media/card-deck/${id}.svg`;
+
+export const getCrocodilePath = (type) => `/assets/media/crocodile-sprite/${type}.svg`;
+
+export const getIconPath = (name) => `/assets/media/icons/${name}.svg`;
+
+export const getSoundPath = (name) => `/assets/media/sound/${name}.mp3`;
+```
+
 ## tailwind.config.js
 
 ```js
@@ -142,15 +1090,28 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // or 'media' for system preferences
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs': '375px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
+      colors: {
+        'harmonious-bold': '#0e6b06',
+        'harmonious-light': '#1c7e33',
+        'harmonious-lighter': '#349b5d',
+      },
+    },
   },
   plugins: [],
 }
-
-
 ```
 
 ## vite.config.js
@@ -159,6 +1120,8 @@ export default {
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from "tailwindcss";
+import path from 'path';
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -168,6 +1131,13 @@ export default defineConfig({
     plugins: [tailwindcss],
    },
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  publicDir: 'public',
+  base: './',
 });
 
 ```
