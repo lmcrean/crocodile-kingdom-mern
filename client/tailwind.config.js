@@ -15,6 +15,11 @@ export default {
         'xl': '1280px',
         '2xl': '1536px',
       },
+      colors: {
+        'harmonious-bold': '#0e6b06',
+        'harmonious-light': '#1c7e33',
+        'harmonious-lighter': '#349b5d',
+      },
     },
   },
   plugins: [],
