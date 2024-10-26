@@ -15,6 +15,7 @@
     "classnames": "^2.5.1",
     "framer-motion": "^11.11.10",
     "howler": "^2.2.4",
+    "lucide-react": "^0.453.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "repo-to-one-file": "^1.0.2",
