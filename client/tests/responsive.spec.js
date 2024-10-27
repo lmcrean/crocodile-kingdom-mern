@@ -8,3 +8,11 @@ test('capture screenshots at all breakpoints', async ({ page }) => {
     directory: 'test-results/homepage'
   });
 });
+
+test('capture screenshots at all breakpoints - bottom of page', async ({ page }) => {
+  await captureScreenshotAtViewports(page, '/', {
+    prefix: 'home-scrolled',
+    directory: 'test-results/homepage-scrolled',
+    scrollToBottom: true
+  });
+});
