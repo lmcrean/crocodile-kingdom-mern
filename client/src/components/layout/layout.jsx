@@ -1,13 +1,9 @@
 // src/components/layout/Layout.jsx
-import React, { useEffect, useState } from 'react';
-import { useGameContext } from '../../context/GameContext';
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
 export default function Layout({ children }) {
-  const [isContentTall, setIsContentTall] = useState(false);
-  const mainRef = React.useRef(null);
-
   return (
     <div className="min-h-screen w-screen flex flex-col bg-green-50 overflow-x-hidden">
       {/* Fixed Background */}
@@ -20,7 +16,7 @@ export default function Layout({ children }) {
       </div>
       
       {/* Main Content Wrapper */}
-      <div ref={mainRef} className="relative flex flex-col min-h-screen w-screen">
+      <div className="relative flex flex-col min-h-screen w-screen">
         {/* Content Area */}
         <div className="flex-1 flex flex-col">
           <div className="container mx-auto px-4 flex-1
