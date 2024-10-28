@@ -7,7 +7,7 @@ export default function Header() {
   const { soundEnabled, musicEnabled, dispatch } = useGameContext();
 
   return (
-    <header className="w-full">
+    <header className="w-full flex md:flex-row lg:flex-col">
       {/* Logo Container - Responsive sizing */}
       <div className="relative h-32 sm:h-40 lg:h-48 mb-6 lg:mb-8">
         {/* Logo Background */}
@@ -37,7 +37,7 @@ export default function Header() {
       {/* Controls - Responsive grid */}
       <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-xs mx-auto lg:max-w-sm">
         {/* Sound Effects */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center my-auto">
           <button
             onClick={() => dispatch({ type: 'TOGGLE_SOUND' })}
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-600 
@@ -50,7 +50,7 @@ export default function Header() {
         </div>
 
         {/* Music */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center my-auto">
           <button
             onClick={() => dispatch({ type: 'TOGGLE_MUSIC' })}
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-600 
@@ -63,7 +63,7 @@ export default function Header() {
         </div>
 
         {/* Contact */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center my-auto">
           <a
             href="mailto:contact@crocodilekingdom.co.uk"
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-600 
