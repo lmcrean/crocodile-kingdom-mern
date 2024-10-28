@@ -8,30 +8,6 @@ export default function Layout({ children }) {
   const [isContentTall, setIsContentTall] = useState(false);
   const mainRef = React.useRef(null);
 
-  useEffect(() => {
-    const checkContentHeight = () => {
-      if (mainRef.current) {
-        const mainHeight = mainRef.current.getBoundingClientRect().height;
-        const viewportHeight = window.innerHeight;
-        setIsContentTall(mainHeight > viewportHeight - 100); // 100px buffer for footer
-      }
-    };
-
-    checkContentHeight();
-    window.addEventListener('resize', checkContentHeight);
-    
-    // Re-check on any content changes that might affect height
-    const observer = new ResizeObserver(checkContentHeight);
-    if (mainRef.current) {
-      observer.observe(mainRef.current);
-    }
-
-    return () => {
-      window.removeEventListener('resize', checkContentHeight);
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <div className="min-h-screen w-screen flex flex-col bg-green-50 overflow-x-hidden">
       {/* Fixed Background */}
@@ -44,11 +20,12 @@ export default function Layout({ children }) {
       </div>
       
       {/* Main Content Wrapper */}
-      <div ref={mainRef} className="relative z-10 flex flex-col min-h-screen">
+      <div ref={mainRef} className="relative flex flex-col min-h-screen w-screen">
         {/* Content Area */}
         <div className="flex-1 flex flex-col">
           <div className="container mx-auto px-4 flex-1
             xs:max-w-[100vw] sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl
+            xs:max-h-[80vh] sm:max-h-[80vh] md:max-h-[80vh] lg:max-h-[80vh] xl:max-h-[80vh] 2xl:max-h-[80vh]
             lg:grid lg:grid-cols-[1fr_2fr] lg:gap-8 xl:gap-12">
             
             {/* Left Column (Header + Controls) */}
@@ -63,12 +40,9 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        {/* Footer - will stick to bottom when content is shorter than viewport */}
+        {/* Footer - stick to bottom */}
         <Footer 
-          className={`
-            relative z-10 w-full bottom-0
-            ${!isContentTall ? 'absolute bottom-0 left-0' : 'mt-auto'}
-          `}
+          className="absolute bottom-0 w-[100vw]"
         />
       </div>
     </div>
