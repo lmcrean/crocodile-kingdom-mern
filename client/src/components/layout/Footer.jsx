@@ -14,7 +14,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full py-8 mt-0 bg-green-50/80 backdrop-blur-sm">
+    <footer className="w-full py-8 mb-0 bg-green-50/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         {/* Copyright */}
         <div className="text-center mb-8">
