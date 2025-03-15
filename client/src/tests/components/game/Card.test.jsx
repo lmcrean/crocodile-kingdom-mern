@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Card from '@/components/game/Card';
+import Card from '../../../components/game/Card';
 
 describe('Card Component for Word Association Game', () => {
   it('renders a card with the correct content', () => {
