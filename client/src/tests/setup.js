@@ -1,7 +1,7 @@
 // src/tests/setup.js
 import { expect, afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
-import matchers from '@testing-library/jest-dom/matchers';
+import * as matchers from '@testing-library/jest-dom/matchers';
 
 // Add testing-library jest-dom matchers
 expect.extend(matchers);
