@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-export default function Card({ word, imagePath, isFlipped, isMatched, isSelected, onClick }) {
+export default function Card({ word, imagePath, isFlipped, isMatched, isSelected, onClick, id }) {
   // Consider a card flipped if either isFlipped OR isMatched is true
   const showFlipped = isFlipped || isMatched;
+  
+  // Debug logging
+  useEffect(() => {
+    if (isMatched) {
+      console.log(`Card ${id} is matched: ${isMatched}`);
+    }
+    if (isFlipped) {
+      console.log(`Card ${id} is flipped: ${isFlipped}`);
+    }
+  }, [id, isFlipped, isMatched]);
   
   return (
     <div 
       onClick={onClick}
       data-testid="card"
+      data-card-id={id}
+      data-is-flipped={isFlipped}
+      data-is-matched={isMatched}
       className={`
         relative h-full w-full rounded-xl shadow-lg cursor-pointer
         transition-all duration-300 transform 
