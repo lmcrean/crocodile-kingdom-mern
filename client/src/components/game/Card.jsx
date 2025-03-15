@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default function Card({ word, imagePath, isFlipped, isSelected, onClick }) {
+export default function Card({ word, imagePath, isFlipped, isMatched, isSelected, onClick }) {
+  // Consider a card flipped if either isFlipped OR isMatched is true
+  const showFlipped = isFlipped || isMatched;
+  
   return (
     <div 
       onClick={onClick}
@@ -8,14 +11,14 @@ export default function Card({ word, imagePath, isFlipped, isSelected, onClick }
       className={`
         relative h-full w-full rounded-xl shadow-lg cursor-pointer
         transition-all duration-300 transform 
-        ${isSelected ? 'border-4 border-green-500' : 'border border-gray-200'}
+        ${isSelected ? 'border-4 border-green-500' : isMatched ? 'border-4 border-blue-500' : 'border border-gray-200'}
       `}
     >
       {/* Back of card (shows first) */}
       <div 
         className={`
           absolute inset-0 rounded-xl bg-white overflow-hidden
-          transition-all duration-500 z-${isFlipped ? '0' : '10'} scale-${isFlipped ? '0' : '100'}
+          transition-all duration-500 z-${showFlipped ? '0' : '10'} scale-${showFlipped ? '0' : '100'}
         `}
         data-testid="card-back"
       >
@@ -31,7 +34,7 @@ export default function Card({ word, imagePath, isFlipped, isSelected, onClick }
       <div 
         className={`
           absolute inset-0 rounded-xl overflow-hidden bg-white
-          transition-all duration-500 z-${isFlipped ? '10' : '0'} scale-${isFlipped ? '100' : '0'}
+          transition-all duration-500 z-${showFlipped ? '10' : '0'} scale-${showFlipped ? '100' : '0'}
         `}
         data-testid="card-front"
       >
