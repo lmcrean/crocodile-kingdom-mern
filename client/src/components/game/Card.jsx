@@ -1,4 +1,3 @@
-// src/components/game/Card.jsx
 import React from 'react';
 
 export default function Card({ word, imagePath, isFlipped, isSelected, onClick }) {
@@ -47,4 +46,4 @@ export default function Card({ word, imagePath, isFlipped, isSelected, onClick }
       </div>
     </div>
   );
-}
+} 
