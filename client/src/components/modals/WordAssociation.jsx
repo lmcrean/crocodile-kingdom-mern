@@ -22,7 +22,7 @@ export default function WordAssociationModal({
       className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4"
       data-testid="word-association-modal"
     >
-      <div className="bg-gray-900 rounded-xl w-full max-w-2xl p-6 shadow-2xl text-white">
+      <div className="bg-white rounded-xl w-full max-w-2xl p-6 shadow-2xl">
         <h2 className="text-2xl font-bold text-center mb-4">Word Association Challenge</h2>
         
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
@@ -46,7 +46,7 @@ export default function WordAssociationModal({
           <textarea
             value={association}
             onChange={(e) => setAssociation(e.target.value)}
-            className="w-full bg-gray-800 text-white border border-gray-700 rounded-lg p-3 mb-4 min-h-[100px]"
+            className="w-full border border-gray-300 rounded-lg p-3 mb-4 min-h-[100px]"
             placeholder="Write your sentence here..."
             data-testid="association-input"
           />
@@ -55,7 +55,7 @@ export default function WordAssociationModal({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors"
+              className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors"
             >
               Cancel
             </button>
