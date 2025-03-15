@@ -13,7 +13,9 @@ export default function Game() {
   const {
     handleCardClick,
     resetGame,
-    initializeGame
+    initializeGame,
+    isLoading,
+    error
   } = useGameLogic();
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function Game() {
         <div className="flex items-center gap-6 text-white text-lg font-bold order-2 sm:order-1">
           <div className="flex items-center gap-2">
             <span>Matches Found:</span>
-            <span>{matchedPairs.length} / 8</span>
+            <span>{matchedPairs.length} / {cards.length / 2}</span>
           </div>
           <div className="flex items-center gap-2">
             <span>Turns Left:</span>
@@ -40,11 +42,12 @@ export default function Game() {
         <div className="flex gap-4 order-1 sm:order-2">
           <button
             onClick={resetGame}
-            className="px-6 py-2 bg-green-700 text-white rounded-full 
+            disabled={isLoading}
+            className={`px-6 py-2 bg-green-700 text-white rounded-full 
                      hover:bg-green-800 transition-colors shadow-lg
-                     whitespace-nowrap"
+                     whitespace-nowrap ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            Restart Game
+            {isLoading ? 'Loading...' : 'Restart Game'}
           </button>
           <button
             className="px-6 py-2 bg-green-700 text-white rounded-full 
@@ -56,19 +59,41 @@ export default function Game() {
         </div>
       </div>
 
-      {/* Game Grid */}
-      <div className="grid grid-cols-4 gap-2 sm:gap-4 
+      {/* Error message */}
+      {error && (
+        <div className="w-full p-4 mb-4 bg-red-100 text-red-700 rounded-lg">
+          Error: {error}. Please try refreshing the page.
+        </div>
+      )}
+
+      {/* Loading state */}
+      {isLoading ? (
+        <div className="grid grid-cols-4 gap-2 sm:gap-4 
                      aspect-square w-full 
                      xs:max-w-[90vw] sm:max-w-[85vw] md:max-w-[80vw] 
                      lg:max-w-none mx-auto">
-        {cards.map(card => (
-          <Card 
-            key={card.id}
-            {...card}
-            onClick={() => handleCardClick(card.id)}
-          />
-        ))}
-      </div>
+          {Array.from({ length: 16 }).map((_, index) => (
+            <div 
+              key={`loading-${index}`}
+              className="relative h-full w-full rounded-xl shadow-lg bg-blue-50 animate-pulse"
+            />
+          ))}
+        </div>
+      ) : (
+        /* Game Grid */
+        <div className="grid grid-cols-4 gap-2 sm:gap-4 
+                     aspect-square w-full 
+                     xs:max-w-[90vw] sm:max-w-[85vw] md:max-w-[80vw] 
+                     lg:max-w-none mx-auto">
+          {cards.map(card => (
+            <Card 
+              key={card.id}
+              {...card}
+              onClick={() => handleCardClick(card.id)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
