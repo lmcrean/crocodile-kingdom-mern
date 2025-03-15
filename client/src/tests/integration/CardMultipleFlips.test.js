@@ -39,11 +39,6 @@ vi.mock('../../context/GameContext', () => {
             mockResetFlippedCards();
             flippedCardCount = 0;
             
-            // Simulate the bug: after 2 pairs matched, modal doesn't show
-            if (pairsMatched >= 2) {
-              modalVisible = false;
-            }
-            
             if (modalVisible) {
               pairsMatched++;
             }
@@ -71,30 +66,32 @@ describe('Card Multiple Flips and Modal Test', () => {
     vi.clearAllMocks();
   });
 
-  test('Modal should appear for each pair of cards flipped', () => {
-    // First pair
-    mockCheckAssociation('First pair association', ['card1', 'card2']);
-    expect(mockCheckAssociation).toHaveBeenCalledWith('First pair association', ['card1', 'card2']);
-    mockResetFlippedCards();
-    expect(mockResetFlippedCards).toHaveBeenCalled();
+  test('Modal should appear for all 8 pairs of cards flipped', () => {
+    // Test all 8 pairs
+    const pairs = [
+      { cards: ['card1', 'card2'], association: 'First pair association' },
+      { cards: ['card3', 'card4'], association: 'Second pair association' },
+      { cards: ['card5', 'card6'], association: 'Third pair association' },
+      { cards: ['card7', 'card8'], association: 'Fourth pair association' },
+      { cards: ['card9', 'card10'], association: 'Fifth pair association' },
+      { cards: ['card11', 'card12'], association: 'Sixth pair association' },
+      { cards: ['card13', 'card14'], association: 'Seventh pair association' },
+      { cards: ['card15', 'card16'], association: 'Eighth pair association' }
+    ];
     
-    // Second pair
-    mockCheckAssociation('Second pair association', ['card3', 'card4']);
-    expect(mockCheckAssociation).toHaveBeenCalledWith('Second pair association', ['card3', 'card4']);
-    mockResetFlippedCards();
-    expect(mockResetFlippedCards).toHaveBeenCalled();
-    
-    // Third pair - this is where the bug happens, modal doesn't show
-    mockCheckAssociation('Third pair association', ['card5', 'card6']);
-    expect(mockCheckAssociation).toHaveBeenCalledWith('Third pair association', ['card5', 'card6']);
-    mockResetFlippedCards();
-    expect(mockResetFlippedCards).toHaveBeenCalled();
-    
-    // Fourth pair - should still work if we fix the bug
-    mockCheckAssociation('Fourth pair association', ['card7', 'card8']);
-    expect(mockCheckAssociation).toHaveBeenCalledWith('Fourth pair association', ['card7', 'card8']);
+    // Process each pair
+    pairs.forEach((pair, index) => {
+      mockCheckAssociation(pair.association, pair.cards);
+      expect(mockCheckAssociation).toHaveBeenCalledWith(pair.association, pair.cards);
+      
+      // Reset flipped cards after each pair except the last one
+      if (index < pairs.length - 1) {
+        mockResetFlippedCards();
+        expect(mockResetFlippedCards).toHaveBeenCalled();
+      }
+    });
     
     // The test passes if we can call mockCheckAssociation for all pairs without errors
-    expect(mockCheckAssociation).toHaveBeenCalledTimes(4);
+    expect(mockCheckAssociation).toHaveBeenCalledTimes(8);
   });
 }); 
