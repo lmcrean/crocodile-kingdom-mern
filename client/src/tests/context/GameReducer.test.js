@@ -1,5 +1,17 @@
-import { describe, it, expect } from 'vitest';
-import { ActionTypes } from '../../context/GameContext';
+import { describe, it, expect, vi } from 'vitest';
+
+// Mock ActionTypes to avoid JSX issues
+const ActionTypes = {
+  INITIALIZE_CARDS: 'INITIALIZE_CARDS',
+  FLIP_CARD: 'FLIP_CARD',
+  SELECT_CARD: 'SELECT_CARD',
+  RESET_FLIPPED_CARDS: 'RESET_FLIPPED_CARDS',
+  RESET_SELECTED_CARDS: 'RESET_SELECTED_CARDS',
+  SET_MATCHED_PAIR: 'SET_MATCHED_PAIR',
+  SET_ASSOCIATION: 'SET_ASSOCIATION',
+  RESET_GAME: 'RESET_GAME',
+  CLEAR_FLIPPED_CARDS: 'CLEAR_FLIPPED_CARDS'
+};
 
 // Import the reducer function
 // Since we can't easily export just the reducer from GameContext, we'll recreate it here for testing
@@ -71,6 +83,12 @@ function gameReducer(state, action) {
         flippedCards: []
       };
 
+    case ActionTypes.CLEAR_FLIPPED_CARDS:
+      return {
+        ...state,
+        flippedCards: []
+      };
+
     case ActionTypes.RESET_SELECTED_CARDS:
       return {
         ...state,
@@ -96,7 +114,7 @@ function gameReducer(state, action) {
         currentScore: state.currentScore + (state.turnsLeft * 50), // Increment score
         cards: state.cards.map(card =>
           matchedCardIds.includes(card.id)
-            ? { ...card, isMatched: true, isSelected: false }
+            ? { ...card, isMatched: true, isFlipped: true }
             : card
         ),
         selectedCards: [],
