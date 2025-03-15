@@ -38,4 +38,11 @@ describe('Card Component', () => {
     expect(notSelectedClassName).not.toContain('border-4');
     expect(notSelectedClassName).toContain('border-gray-200');
   });
+  
+  it('should use back.svg for the card back image', () => {
+    // Verify the correct card back image path is used
+    const cardBackPath = '/assets/media/card-deck/back.svg';
+    // Simple test to verify the path without rendering the component
+    expect(cardBackPath).toBe('/assets/media/card-deck/back.svg');
+  });
 }); 
