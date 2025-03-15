@@ -157,7 +157,7 @@ function gameReducer(state, action) {
         currentScore: state.currentScore + (state.turnsLeft * 50), // Increment score
         cards: state.cards.map(card =>
           matchedCardIds.includes(card.id)
-            ? { ...card, isMatched: true, isSelected: false }
+            ? { ...card, isMatched: true, isFlipped: true, isSelected: false }
             : card
         ),
         selectedCards: [],
