@@ -19,10 +19,12 @@ export default function Card({ word, imagePath, isFlipped, isSelected, onClick }
         `}
         data-testid="card-back"
       >
-        <div className="h-full w-full flex flex-col items-center justify-center p-4 bg-blue-50">
-          <div className="text-2xl font-bold text-blue-800">Word Association</div>
-          <div className="text-sm text-blue-600">Click to reveal</div>
-        </div>
+        <img 
+          src="/assets/media/card-deck/back.svg"
+          alt="Card back"
+          className="h-full w-full object-cover"
+          data-testid="card-back-image"
+        />
       </div>
 
       {/* Front of card (shows when flipped) */}
