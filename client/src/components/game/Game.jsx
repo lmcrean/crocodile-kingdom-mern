@@ -34,6 +34,13 @@ export default function Game() {
     }
   }, [flippedCards]);
 
+  // Reset modal state when flippedCards is empty
+  useEffect(() => {
+    if (flippedCards.length === 0) {
+      setShowAssociationModal(false);
+    }
+  }, [flippedCards]);
+
   // Get the flipped card objects for the modal
   const flippedCardObjects = cards.filter(card => flippedCards.includes(card.id));
 
