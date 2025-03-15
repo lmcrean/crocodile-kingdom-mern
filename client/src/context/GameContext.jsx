@@ -6,8 +6,10 @@ const initialState = {
   // Card related state
   cards: [],
   flippedCards: [],
+  selectedCards: [],
   matchedPairs: [],
   isChecking: false,
+  currentAssociation: '',
 
   // Game progress
   turns: 0,
@@ -31,9 +33,12 @@ const ActionTypes = {
   // Card actions
   INITIALIZE_CARDS: 'INITIALIZE_CARDS',
   FLIP_CARD: 'FLIP_CARD',
+  SELECT_CARD: 'SELECT_CARD',
   RESET_FLIPPED_CARDS: 'RESET_FLIPPED_CARDS',
+  RESET_SELECTED_CARDS: 'RESET_SELECTED_CARDS',
   SET_MATCHED_PAIR: 'SET_MATCHED_PAIR',
   SET_CHECKING: 'SET_CHECKING',
+  SET_ASSOCIATION: 'SET_ASSOCIATION',
 
   // Game progress actions
   START_GAME: 'START_GAME',
@@ -59,6 +64,7 @@ function gameReducer(state, action) {
         ...state,
         cards: action.payload,
         flippedCards: [],
+        selectedCards: [],
         matchedPairs: [],
         turns: 0,
         turnsLeft: state.maxTurns,
@@ -66,6 +72,7 @@ function gameReducer(state, action) {
         gameWon: false,
         gameStarted: true,
         currentScore: 0,
+        currentAssociation: '',
       };
 
     case ActionTypes.FLIP_CARD:
@@ -79,6 +86,33 @@ function gameReducer(state, action) {
         flippedCards: [...state.flippedCards, action.payload]
       };
 
+    case ActionTypes.SELECT_CARD:
+      // Only allow selecting up to 2 cards
+      if (state.selectedCards.includes(action.payload)) {
+        // Deselect if already selected
+        return {
+          ...state,
+          selectedCards: state.selectedCards.filter(id => id !== action.payload),
+          cards: state.cards.map(card =>
+            card.id === action.payload
+              ? { ...card, isSelected: false }
+              : card
+          )
+        };
+      } else if (state.selectedCards.length < 2) {
+        // Select new card
+        return {
+          ...state,
+          selectedCards: [...state.selectedCards, action.payload],
+          cards: state.cards.map(card =>
+            card.id === action.payload
+              ? { ...card, isSelected: true }
+              : card
+          )
+        };
+      }
+      return state;
+
     case ActionTypes.RESET_FLIPPED_CARDS:
       return {
         ...state,
@@ -90,27 +124,50 @@ function gameReducer(state, action) {
         flippedCards: []
       };
 
+    case ActionTypes.RESET_SELECTED_CARDS:
+      return {
+        ...state,
+        cards: state.cards.map(card =>
+          state.selectedCards.includes(card.id)
+            ? { ...card, isSelected: false }
+            : card
+        ),
+        selectedCards: [],
+        currentAssociation: ''
+      };
+
     case ActionTypes.SET_MATCHED_PAIR:
-      const newMatchedPairs = [...state.matchedPairs, action.payload];
-      const isGameWon = newMatchedPairs.length === 8; // All pairs found
+      const matchedCardIds = action.payload;
+      const newMatchedPairs = [...state.matchedPairs, ...matchedCardIds];
+      const totalPairsInGame = state.cards.length / 2;
+      const isGameWon = newMatchedPairs.length === state.cards.length; // All cards matched
+      
       return {
         ...state,
         matchedPairs: newMatchedPairs,
         gameWon: isGameWon,
         gameOver: isGameWon,
-        currentScore: state.turnsLeft * 100, // Calculate score based on turns left
+        currentScore: state.currentScore + (state.turnsLeft * 50), // Increment score
         cards: state.cards.map(card =>
-          card.type === action.payload
-            ? { ...card, isMatched: true }
+          matchedCardIds.includes(card.id)
+            ? { ...card, isMatched: true, isSelected: false }
             : card
         ),
-        flippedCards: []
+        selectedCards: [],
+        flippedCards: [],
+        currentAssociation: '',
       };
 
     case ActionTypes.SET_CHECKING:
       return {
         ...state,
         isChecking: action.payload
+      };
+
+    case ActionTypes.SET_ASSOCIATION:
+      return {
+        ...state,
+        currentAssociation: action.payload
       };
 
     case ActionTypes.START_GAME:
@@ -191,8 +248,10 @@ export function GameProvider({ children }) {
     // Game state
     cards: state.cards,
     flippedCards: state.flippedCards,
+    selectedCards: state.selectedCards,
     matchedPairs: state.matchedPairs,
     isChecking: state.isChecking,
+    currentAssociation: state.currentAssociation,
     
     // Game progress
     turns: state.turns,
@@ -217,6 +276,8 @@ export function GameProvider({ children }) {
     toggleSound: () => dispatch({ type: ActionTypes.TOGGLE_SOUND }),
     toggleMusic: () => dispatch({ type: ActionTypes.TOGGLE_MUSIC }),
     resetGame: (cards) => dispatch({ type: ActionTypes.RESET_GAME, payload: cards }),
+    setAssociation: (text) => dispatch({ type: ActionTypes.SET_ASSOCIATION, payload: text }),
+    resetSelectedCards: () => dispatch({ type: ActionTypes.RESET_SELECTED_CARDS }),
     addHighScore: (name, score) => dispatch({ 
       type: ActionTypes.ADD_HIGH_SCORE, 
       payload: { name, score } 
