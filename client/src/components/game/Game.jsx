@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGameContext } from '../../context/GameContext';
 import { useGameLogic } from '../../hooks/useGameLogic';
 import Card from './Card';
+import WordAssociationModal from '../modals/WordAssociation';
 
 export default function Game() {
   const { 
     cards, 
     matchedPairs, 
-    turnsLeft 
+    turnsLeft,
+    flippedCards
   } = useGameContext();
 
   const {
@@ -15,12 +17,31 @@ export default function Game() {
     resetGame,
     initializeGame,
     isLoading,
-    error
+    error,
+    checkAssociation
   } = useGameLogic();
 
+  const [showAssociationModal, setShowAssociationModal] = useState(false);
+  
   useEffect(() => {
     initializeGame();
   }, [initializeGame]);
+  
+  // Show modal when two cards are flipped
+  useEffect(() => {
+    if (flippedCards.length === 2) {
+      setShowAssociationModal(true);
+    }
+  }, [flippedCards]);
+
+  // Get the flipped card objects for the modal
+  const flippedCardObjects = cards.filter(card => flippedCards.includes(card.id));
+
+  // Handle association submission
+  const handleAssociationSubmit = (associationText, cardIds) => {
+    checkAssociation(associationText, cardIds);
+    setShowAssociationModal(false);
+  };
 
   return (
     <div className="w-full">
@@ -30,7 +51,7 @@ export default function Game() {
         <div className="flex items-center gap-6 text-white text-lg font-bold order-2 sm:order-1">
           <div className="flex items-center gap-2">
             <span>Matches Found:</span>
-            <span>{matchedPairs.length} / {cards.length / 2}</span>
+            <span>{matchedPairs.length / 2} / {cards.length / 2}</span>
           </div>
           <div className="flex items-center gap-2">
             <span>Turns Left:</span>
@@ -65,6 +86,14 @@ export default function Game() {
           Error: {error}. Please try refreshing the page.
         </div>
       )}
+
+      {/* Word Association Modal */}
+      <WordAssociationModal 
+        isOpen={showAssociationModal}
+        onClose={() => setShowAssociationModal(false)}
+        onSubmit={handleAssociationSubmit}
+        cards={flippedCardObjects}
+      />
 
       {/* Loading state */}
       {isLoading ? (
