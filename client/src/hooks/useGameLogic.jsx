@@ -41,8 +41,13 @@ export const useGameLogic = () => {
     const cardToFlip = cards.find(card => card.id === cardId);
     
     // Prevent invalid moves
-    if (isChecking || cardToFlip.isMatched || cardToFlip.isFlipped) {
+    if (isChecking || !cardToFlip || cardToFlip.isMatched || cardToFlip.isFlipped) {
       return;
+    }
+
+    // If we already have 2 flipped cards, reset them first
+    if (flippedCards.length === 2) {
+      dispatch({ type: 'RESET_FLIPPED_CARDS' });
     }
 
     // Flip the card
@@ -50,7 +55,7 @@ export const useGameLogic = () => {
     
     // If we have two cards flipped, we'll need to enter an association
     // This will be handled by the Game component with modal
-  }, [cards, isChecking, dispatch]);
+  }, [cards, isChecking, flippedCards, dispatch]);
 
   // Handle selecting a card for association
   const selectCard = useCallback((cardId) => {
@@ -76,6 +81,8 @@ export const useGameLogic = () => {
     } else {
       // Reset selection if invalid
       dispatch({ type: 'RESET_SELECTED_CARDS' });
+      // Also reset flipped cards so player can try again
+      dispatch({ type: 'RESET_FLIPPED_CARDS' });
       return false;
     }
   }, [cards, dispatch]);
