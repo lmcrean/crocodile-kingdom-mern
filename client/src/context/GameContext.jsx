@@ -35,6 +35,7 @@ const ActionTypes = {
   FLIP_CARD: 'FLIP_CARD',
   SELECT_CARD: 'SELECT_CARD',
   RESET_FLIPPED_CARDS: 'RESET_FLIPPED_CARDS',
+  CLEAR_FLIPPED_CARDS: 'CLEAR_FLIPPED_CARDS',
   RESET_SELECTED_CARDS: 'RESET_SELECTED_CARDS',
   SET_MATCHED_PAIR: 'SET_MATCHED_PAIR',
   SET_CHECKING: 'SET_CHECKING',
@@ -121,6 +122,12 @@ function gameReducer(state, action) {
             ? { ...card, isFlipped: false }
             : card
         ),
+        flippedCards: []
+      };
+
+    case ActionTypes.CLEAR_FLIPPED_CARDS:
+      return {
+        ...state,
         flippedCards: []
       };
 
