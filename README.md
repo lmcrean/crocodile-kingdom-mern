@@ -22,8 +22,8 @@ A word association memory game built with the MERN stack and deployed on Vercel.
 5. Enter a sentence that incorporates both words shown on the cards.
 6. Click "Submit" to close the modal.
 7. Successfully matched cards remain face-up.
-8. Continue playing with the remaining face-down cards.
-9. The game ends when all cards have been matched or when you run out of turns.
+8. Continue playing with the remaining face-down cards. See steps 2-7.
+9. The game ends when all cards have been flipped over.
 
 ## 📚 Tech Stack:
 
