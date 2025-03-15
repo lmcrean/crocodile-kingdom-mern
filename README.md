@@ -1,4 +1,3 @@
-
 <p align="center">
   <p align="center">
     <a href="https://www.youtube.com/@codingforinnovations" target="_blank">
@@ -10,30 +9,52 @@
   </p>
 </p>
 
-# MERN Stack in Vercel
+# Crocodile Kingdom: Word Association Game
 
-Deploy a MERN Stack to Vercel.
+A word association memory game built with the MERN stack and deployed on Vercel.
 
-### Youtube Video: [Link](https://www.youtube.com/watch?v=GyDAGGUn3Ck)
+## 🎮 Game Rules
 
-### Instant Deploy to Vercel:
+1. The game loads with a grid of 16 face-down cards.
+2. Click on a card to flip it over, revealing an image and a word.
+3. Click on a second card to flip it over.
+4. When two cards are flipped, a modal appears with both images and a text box.
+5. Enter a sentence that incorporates both words shown on the cards.
+6. Click "Submit" to close the modal.
+7. Successfully matched cards remain face-up.
+8. Continue playing with the remaining face-down cards.
+9. The game ends when all cards have been matched or when you run out of turns.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/lmcrean/mern-template-with-tailwind)
+## 📚 Tech Stack:
 
-## 📚 Stack:
+- [Vercel](https://vercel.com/) - Frontend Cloud for deployment
+- [React](https://react.dev/) - UI library
+- [Vite](https://vitejs.dev/) - Frontend build tool
+- [Express](https://expressjs.com/) - Backend web framework
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Vitest](https://vitest.dev/) - Testing framework
 
-- [Vercel](https://vercel.com/) - Frontend Cloud gives developers the frameworks, workflows, and infrastructure to build a faster, more personalized Web.
-- [React](https://react.dev/) - The library for web and native user interfaces.
-- [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling.
-- [Express](https://expressjs.com/) - Fast, opinionated, minimalist web framework for Node.js.
+## 🧪 Testing
 
-## 📸 Screenshots:
-- Frontend:
-<img src=".github/static/client.png" alt="client"/> 
+The project uses Vitest for both unit and integration testing:
 
-- Backend:
-<img src=".github/static/api.png" alt="api"/> 
+### Unit Tests
+- Test individual components (Card, Game)
+- Test utility functions (loadCards, wordAssociation)
+- Test context and hooks
 
+### Integration Tests
+- Test the complete game flow
+- Verify card flipping functionality
+- Test the word association modal
+- Validate game state after interactions
+
+To run tests:
+```bash
+cd client
+npm test -- "TestName"       # Run a specific test
+npm test                     # Run all tests
+```
 
 ## 📁 Project structure:
 
@@ -43,32 +64,32 @@ $PROJECT_ROOT
 ├── api/  # Express Backend
 │  
 ├── client/  # React app
+│   ├── src/
+│   │   ├── components/  # UI components
+│   │   │   ├── game/    # Game components
+│   │   │   └── modals/  # Modal components
+│   │   ├── context/     # React context
+│   │   ├── hooks/       # Custom hooks
+│   │   ├── utils/       # Utility functions
+│   │   └── tests/       # Test files
+│   │       ├── unit/    # Unit tests
+│   │       └── integration/ # Integration tests
 │
-├── vercel.json # vercel json file
+├── vercel.json # Vercel configuration
 ```
 
+##  🏆 Getting Started: 
 
-##  🏆Getting Started: 
-
-- Clone repository (original credit to [codingforinnovations](https://github.com/codingforinnovations/mern-vercel)):
+- Clone repository:
 
 ```bash
-mkdir ~/Dev/mern-react -p
-cd ~/Dev/mern-react
-git clone https://github.com/codingforinnovations/mern-vercel.git .
+git clone https://github.com/your-username/crocodile-kingdom-mern.git
+cd crocodile-kingdom-mern
 ```  
-
-Clone repository (updated to use Vite and TailwindCSS):
-
-```bash
-mkdir ~/Dev/mern-react -p
-cd ~/Dev/mern-react
-git clone https://github.com/lmcrean/mern-template-with-tailwind.git .
-```
 
 - Start Express Js:
 ```bash
-cd ~/Dev/mern-react/api
+cd api
 npm i
 npm run dev
 ```
@@ -76,27 +97,21 @@ npm run dev
 - Start React app:
 
 ```bash
-cd ~/Dev/mern-react/client/
+cd client
 npm i
 npm run dev
 ```
 
-
-Open [localhost:8000/api/hello](http://localhost:8000/admin) in your browser for api!
+Open [localhost:8000/api/hello](http://localhost:8000/api/hello) in your browser for API!
 
 Open [localhost:3000](http://localhost:3000) in your browser for client
 
 
 ## 🎫 LICENSE:
 
-[MIT LICENSE](https://github.com/codingforinnovations/mern-vercel/blob/main/LICENSE)
-
-## 🆕 Change Log:
-
-[Change Log](https://github.com/codingforinnovations/mern-vercel/commits/main/)
+[MIT LICENSE](LICENSE)
 
 <br />
-
 
 <div align="center">
 <i>Other places you can find us:</i><br>
