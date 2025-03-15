@@ -45,17 +45,15 @@ export const useGameLogic = () => {
       return;
     }
 
-    // If we already have 2 flipped cards, reset them first
-    if (flippedCards.length === 2) {
-      dispatch({ type: 'RESET_FLIPPED_CARDS' });
-    }
+    // No longer reset flipped cards when 2 are already flipped
+    // This allows cards to stay flipped after modal interaction
 
     // Flip the card
     dispatch({ type: 'FLIP_CARD', payload: cardId });
     
     // If we have two cards flipped, we'll need to enter an association
     // This will be handled by the Game component with modal
-  }, [cards, isChecking, flippedCards, dispatch]);
+  }, [cards, isChecking, dispatch]);
 
   // Handle selecting a card for association
   const selectCard = useCallback((cardId) => {
@@ -77,11 +75,14 @@ export const useGameLogic = () => {
     if (isValid) {
       // Set as matched if valid
       dispatch({ type: 'SET_MATCHED_PAIR', payload: [card1.id, card2.id] });
+      // Clear flipped cards array without flipping the cards back
+      dispatch({ type: 'CLEAR_FLIPPED_CARDS' });
       return true;
     } else {
       // Reset selection if invalid
       dispatch({ type: 'RESET_SELECTED_CARDS' });
-      // Also reset flipped cards so player can try again
+      // For invalid associations, we still want to reset flipped cards
+      // so player can try again
       dispatch({ type: 'RESET_FLIPPED_CARDS' });
       return false;
     }
