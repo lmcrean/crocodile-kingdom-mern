@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useGameContext } from '../../context/GameContext';
 import { useGameLogic } from '../../hooks/useGameLogic';
 import Card from './Card';
 import WordAssociationModal from '../modals/WordAssociation';
+import HowToPlayModal from '../modals/HowToPlay';
 
 export default function Game() {
   const { 
     cards, 
     matchedPairs, 
-    turnsLeft,
     flippedCards
   } = useGameContext();
 
@@ -22,6 +22,11 @@ export default function Game() {
   } = useGameLogic();
 
   const [showAssociationModal, setShowAssociationModal] = useState(false);
+  const [showHowToPlayModal, setShowHowToPlayModal] = useState(false);
+  
+  // Add refs to track previous state for debugging
+  const prevFlippedCardsRef = useRef([]);
+  const prevMatchedPairsRef = useRef([]);
   
   useEffect(() => {
     initializeGame();
@@ -30,13 +35,31 @@ export default function Game() {
   // Show modal when two cards are flipped
   useEffect(() => {
     if (flippedCards.length === 2) {
+      console.log('[GAME] Two cards flipped, showing modal:', flippedCards);
       setShowAssociationModal(true);
     }
+    
+    // Debug changes to flipped cards
+    if (JSON.stringify(flippedCards) !== JSON.stringify(prevFlippedCardsRef.current)) {
+      console.log('[GAME] flippedCards changed:', 
+        { previous: prevFlippedCardsRef.current, current: flippedCards });
+      prevFlippedCardsRef.current = [...flippedCards];
+    }
   }, [flippedCards]);
+
+  // Track matched pairs changes for debugging
+  useEffect(() => {
+    if (JSON.stringify(matchedPairs) !== JSON.stringify(prevMatchedPairsRef.current)) {
+      console.log('[GAME] matchedPairs changed:', 
+        { previous: prevMatchedPairsRef.current, current: matchedPairs });
+      prevMatchedPairsRef.current = [...matchedPairs];
+    }
+  }, [matchedPairs]);
 
   // Reset modal state when flippedCards is empty
   useEffect(() => {
     if (flippedCards.length === 0) {
+      console.log('[GAME] flippedCards is empty, hiding modal');
       setShowAssociationModal(false);
     }
   }, [flippedCards]);
@@ -46,6 +69,7 @@ export default function Game() {
 
   // Handle association submission
   const handleAssociationSubmit = (associationText, cardIds) => {
+    console.log('[GAME] Submitting association:', { associationText, cardIds });
     checkAssociation(associationText, cardIds);
     setShowAssociationModal(false);
   };
@@ -57,28 +81,25 @@ export default function Game() {
         {/* Left side - Status */}
         <div className="flex items-center gap-6 text-white text-lg font-bold order-2 sm:order-1">
           <div className="flex items-center gap-2">
-            <span>Matches Found:</span>
+            <span>Matches:</span>
             <span>{matchedPairs.length / 2} / {cards.length / 2}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span>Turns Left:</span>
-            <span>{turnsLeft}</span>
           </div>
         </div>
 
         {/* Right side - Controls */}
-        <div className="flex gap-4 order-1 sm:order-2">
+        <div className="flex gap-2 order-1 sm:order-2">
           <button
             onClick={resetGame}
             disabled={isLoading}
-            className={`px-6 py-2 bg-green-700 text-white rounded-full 
+            className={`px-3 py-2 bg-green-700 text-white rounded-full 
                      hover:bg-green-800 transition-colors shadow-lg
                      whitespace-nowrap ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             {isLoading ? 'Loading...' : 'Restart Game'}
           </button>
           <button
-            className="px-6 py-2 bg-green-700 text-white rounded-full 
+            onClick={() => setShowHowToPlayModal(true)}
+            className="px-3 py-2 bg-green-700 text-white rounded-full 
                      hover:bg-green-800 transition-colors shadow-lg
                      whitespace-nowrap"
           >
@@ -100,6 +121,12 @@ export default function Game() {
         onClose={() => setShowAssociationModal(false)}
         onSubmit={handleAssociationSubmit}
         cards={flippedCardObjects}
+      />
+
+      {/* How To Play Modal */}
+      <HowToPlayModal
+        isOpen={showHowToPlayModal}
+        onClose={() => setShowHowToPlayModal(false)}
       />
 
       {/* Loading state */}
