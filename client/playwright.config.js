@@ -16,7 +16,17 @@ export default defineConfig({
     {
       name: 'desktop',
       use: {
-        ...devices['Desktop Chrome'],
+        ...devices['Desktop Safari'],
+        screenshot: 'on',
+        video: 'off',
+        trace: 'off',
+      },
+    },
+    // Only use Safari for mobile testing
+    {
+      name: 'mobile-safari',
+      use: {
+        ...devices['iPhone 13'],
         screenshot: 'on',
         video: 'off',
         trace: 'off',
