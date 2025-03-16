@@ -115,6 +115,23 @@ function gameReducer(state, action) {
       return state;
 
     case ActionTypes.RESET_FLIPPED_CARDS:
+      // Extra debug info
+      console.log('[REDUCER] RESET_FLIPPED_CARDS called');
+      console.log('[REDUCER] Current flippedCards:', state.flippedCards);
+      
+      const cardsBeingReset = state.cards
+        .filter(card => state.flippedCards.includes(card.id) && !card.isMatched)
+        .map(card => card.id);
+      
+      console.log('[REDUCER] Cards being reset (not matched):', cardsBeingReset);
+      
+      // Cards that remain flipped because they're matched
+      const matchedCards = state.cards
+        .filter(card => state.flippedCards.includes(card.id) && card.isMatched)
+        .map(card => card.id);
+        
+      console.log('[REDUCER] Matched cards staying flipped:', matchedCards);
+      
       return {
         ...state,
         cards: state.cards.map(card =>
@@ -126,6 +143,8 @@ function gameReducer(state, action) {
       };
 
     case ActionTypes.CLEAR_FLIPPED_CARDS:
+      console.log('[REDUCER] CLEAR_FLIPPED_CARDS called');
+      console.log('[REDUCER] Current flippedCards (will be cleared):', state.flippedCards);
       return {
         ...state,
         flippedCards: []
@@ -145,9 +164,18 @@ function gameReducer(state, action) {
 
     case ActionTypes.SET_MATCHED_PAIR:
       const matchedCardIds = action.payload;
+      console.log('[REDUCER] SET_MATCHED_PAIR called for:', matchedCardIds);
+      
       const newMatchedPairs = [...state.matchedPairs, ...matchedCardIds];
       const totalPairsInGame = state.cards.length / 2;
       const isGameWon = newMatchedPairs.length === state.cards.length; // All cards matched
+      
+      // Debug the state of matched cards before updating
+      const cardsBeforeMatch = matchedCardIds.map(id => {
+        const card = state.cards.find(c => c.id === id);
+        return { id, isFlipped: card.isFlipped, isMatched: card.isMatched };
+      });
+      console.log('[REDUCER] Cards being matched, current state:', cardsBeforeMatch);
       
       return {
         ...state,
