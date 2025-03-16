@@ -118,7 +118,7 @@ function gameReducer(state, action) {
       return {
         ...state,
         cards: state.cards.map(card =>
-          state.flippedCards.includes(card.id)
+          state.flippedCards.includes(card.id) && !card.isMatched
             ? { ...card, isFlipped: false }
             : card
         ),
