@@ -1,17 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function Card({ word, imagePath, isFlipped, isMatched, isSelected, onClick, id }) {
   // Consider a card flipped if either isFlipped OR isMatched is true
   const showFlipped = isFlipped || isMatched;
   
-  // Debug logging
+  // Keep track of previous state for comparison
+  const prevFlippedRef = useRef(isFlipped);
+  const prevMatchedRef = useRef(isMatched);
+  
+  // Enhanced debug logging
   useEffect(() => {
-    if (isMatched) {
-      console.log(`Card ${id} is matched: ${isMatched}`);
+    // Log when a card becomes matched
+    if (isMatched && !prevMatchedRef.current) {
+      console.log(`Card ${id} is now MATCHED: ${isMatched}`);
     }
-    if (isFlipped) {
-      console.log(`Card ${id} is flipped: ${isFlipped}`);
+    
+    // Log when a card is flipped face-up
+    if (isFlipped && !prevFlippedRef.current) {
+      console.log(`Card ${id} is FLIPPED to face-up: ${isFlipped}`);
     }
+    
+    // Log when a card is flipped back to face-down
+    if (!isFlipped && prevFlippedRef.current) {
+      console.log(`WARNING: Card ${id} was FLIPPED BACK to face-down from ${prevFlippedRef.current} to ${isFlipped}`);
+      
+      // If this card is matched but got flipped down, that's a bug
+      if (isMatched) {
+        console.error(`BUG: Card ${id} is matched (${isMatched}) but was flipped back down!`);
+      }
+    }
+    
+    // Update refs for next render
+    prevFlippedRef.current = isFlipped;
+    prevMatchedRef.current = isMatched;
   }, [id, isFlipped, isMatched]);
   
   return (
