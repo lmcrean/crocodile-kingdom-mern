@@ -1,5 +1,5 @@
 // src/hooks/useGameLogic.jsx
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect, useRef } from 'react';
 import { useGameContext } from '../context/GameContext';
 import { validateAssociation } from '../utils/wordAssociation';
 import { loadCards } from '../utils/loadCards';
@@ -62,23 +62,51 @@ export const useGameLogic = () => {
 
   // Check if word association is valid
   const checkAssociation = useCallback((association, selectedCardIds) => {
-    if (selectedCardIds.length !== 2) return false;
+    console.log('[GAME_LOGIC] checkAssociation called with:', { association, selectedCardIds });
+    
+    if (selectedCardIds.length !== 2) {
+      console.log('[GAME_LOGIC] Invalid number of cards:', selectedCardIds.length);
+      return false;
+    }
     
     const card1 = cards.find(card => card.id === selectedCardIds[0]);
     const card2 = cards.find(card => card.id === selectedCardIds[1]);
     
-    if (!card1 || !card2) return false;
+    if (!card1 || !card2) {
+      console.log('[GAME_LOGIC] Could not find cards:', { card1, card2 });
+      return false;
+    }
+    
+    // Log card states before validation
+    console.log('[GAME_LOGIC] Card states before validation:');
+    console.log(`  Card ${card1.id}: isFlipped=${card1.isFlipped}, isMatched=${card1.isMatched}`);
+    console.log(`  Card ${card2.id}: isFlipped=${card2.isFlipped}, isMatched=${card2.isMatched}`);
+    console.log('[GAME_LOGIC] Current flippedCards:', flippedCards);
     
     // Use the validation utility
     const isValid = validateAssociation(association, card1.word, card2.word);
+    console.log('[GAME_LOGIC] Association validation result:', isValid);
     
     if (isValid) {
+      console.log('[GAME_LOGIC] Valid association, setting matched pair');
       // Set as matched if valid
       dispatch({ type: 'SET_MATCHED_PAIR', payload: [card1.id, card2.id] });
+      
+      // Log again after setting matched
+      setTimeout(() => {
+        const updatedCards = cards.filter(c => c.id === card1.id || c.id === card2.id);
+        console.log('[GAME_LOGIC] Card states after SET_MATCHED_PAIR:');
+        updatedCards.forEach(card => {
+          console.log(`  Card ${card.id}: isFlipped=${card.isFlipped}, isMatched=${card.isMatched}`);
+        });
+      }, 0);
+      
       // Clear flipped cards array without flipping the cards back
+      console.log('[GAME_LOGIC] Clearing flippedCards array');
       dispatch({ type: 'CLEAR_FLIPPED_CARDS' });
       return true;
     } else {
+      console.log('[GAME_LOGIC] Invalid association, resetting cards');
       // Reset selection if invalid
       dispatch({ type: 'RESET_SELECTED_CARDS' });
       // For invalid associations, we still want to reset flipped cards
@@ -86,7 +114,7 @@ export const useGameLogic = () => {
       dispatch({ type: 'RESET_FLIPPED_CARDS' });
       return false;
     }
-  }, [cards, dispatch]);
+  }, [cards, dispatch, flippedCards]);
 
   const resetGame = useCallback(async () => {
     setIsLoading(true);
