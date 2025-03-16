@@ -37,7 +37,7 @@ export default function Header() {
       {/* Controls - Responsive grid */}
       <div className="grid grid-cols-3 gap-4 sm:gap-6 max-w-xs mx-auto lg:max-w-sm">
         {/* Sound Effects */}
-        <div className="flex flex-col items-center my-auto">
+        {/* <div className="flex flex-col items-center my-auto">
           <button
             onClick={() => dispatch({ type: 'TOGGLE_SOUND' })}
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-600 
@@ -47,10 +47,10 @@ export default function Header() {
             {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
           </button>
           <span className="mt-2 text-xs sm:text-sm text-green-800 font-medium">SFX</span>
-        </div>
+        </div> */}
 
         {/* Music */}
-        <div className="flex flex-col items-center my-auto">
+        {/* <div className="flex flex-col items-center my-auto">
           <button
             onClick={() => dispatch({ type: 'TOGGLE_MUSIC' })}
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-600 
@@ -60,7 +60,7 @@ export default function Header() {
             {musicEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
           </button>
           <span className="mt-2 text-xs sm:text-sm text-green-800 font-medium">Music</span>
-        </div>
+        </div> */}
 
         {/* Contact */}
         <div className="flex flex-col items-center my-auto">
